@@ -8,7 +8,7 @@ express mongoose bcrypt jsonwebtoken dotenv cors` im Wurzelverzeichnis Ihres Pro
 
 Erstellen Sie eine `.env`-Datei im Wurzelverzeichnis und definieren Sie die Umgebungsvariablen
 
-`MONGO_URI` (Ihre MongoDB-Verbindungszeichenfolge) und `JWT_SECRET` (ein Geheimnis für die Signierung von JWTs).
+`MONGODB_URI` (Ihre MongoDB-Verbindungszeichenfolge) und `JWT_SECRET` (ein Geheimnis für die Signierung von JWTs).
 
 ## API-Endpunkte
 
