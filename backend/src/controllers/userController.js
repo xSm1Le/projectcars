@@ -2,6 +2,8 @@ import User from '../models/user.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
+// Register
+
 export const registerUser = async (req, res) => {
   const { username, password, isAdmin } = req.body;
   try {
@@ -18,6 +20,8 @@ export const registerUser = async (req, res) => {
     res.status(500).json({ message: "Etwas ist schief gelaufen." });
   }
 };
+
+// Login
 
 export const loginUser = async (req, res) => {
   const { username, password } = req.body;
