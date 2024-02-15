@@ -78,3 +78,53 @@ API -  Backend .
 ### Terminübersicht
 - **Endpoint:** `GET /cars/{carId}/appointments`
 - **Beschreibung:** Ruft geplante Termine für ein Auto ab.
+
+
+
+# Fahrzeugdaten API-Endpunkte
+
+Die API-Endpunkte für die AutoManagerPro App erlauben es Benutzern, spezifische Informationen zu ihren Fahrzeugen einzugeben und zu verwalten. Nachfolgend finden Sie die Details, die von den Benutzern für jedes Fahrzeug angegeben werden sollten.
+
+## Fahrzeug hinzufügen
+
+- **Endpoint:** `POST /cars`
+- **Beschreibung:** Ermöglicht Benutzern das Hinzufügen eines Fahrzeugs mit den folgenden Daten:
+
+    | Feld                             | Beschreibung                        | Typ        | Erforderlich |
+    |----------------------------------|-------------------------------------|------------|--------------|
+    | `licensePlate`                   | KFZ-Kennzeichen                     | String     | Ja           |
+    | `manufacturer`                   | Hersteller                          | String     | Ja           |
+    | `vehicleType`                    | Fahrzeug-Typ                        | String     | Ja           |
+    | `model`                          | Modell                              | String     | Ja           |
+    | `firstRegistration`              | Erstzulassung                       | Date       | Ja           |
+    | `fuelType`                       | Kraftstoffart                       | String     | Ja           |
+    | `emissionClass`                  | Schadstoffklasse                    | String     | Ja           |
+    | `powerKW`                        | Leistung in kW                      | Number     | Ja           |
+    | `powerPS`                        | Leistung in PS                      | Number     | Ja           |
+    | `mileage`                        | Kilometerstand                      | Number     | Ja           |
+    | `lastTUV`                        | Letzter TÜV Termin                  | Date       | Ja           |
+    | `lastOilChange`                  | Letzter Ölwechsel                   | Date       | Ja           |
+    | `nextOilChangeMileage`           | Nächster Ölwechsel nach Kilometern  | Number     | Nein         |
+    | `nextOilChangeDate`              | Nächster Ölwechsel nach Zeit        | Date       | Nein         |
+    | `lastServiceInspection`          | Letzter Service / Inspektion        | Date       | Nein         |
+
+- **Beispiel für eine Anfrage:**
+
+```json
+{
+  "licensePlate": "B-AB 1234",
+  "manufacturer": "Volkswagen",
+  "vehicleType": "PKW",
+  "model": "Golf",
+  "firstRegistration": "2015-04-01",
+  "fuelType": "Benzin",
+  "emissionClass": "Euro 6",
+  "powerKW": 110,
+  "powerPS": 150,
+  "mileage": 85000,
+  "lastTUV": "2022-06-01",
+  "lastOilChange": "2022-07-01",
+  "nextOilChangeMileage": 95000,
+  "nextOilChangeDate": "2023-01-01",
+  "lastServiceInspection": "2022-07-01"
+}
