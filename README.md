@@ -16,4 +16,4 @@ Fahrzeugdaten die angegeben werden sollten von dem User:
 - Letzter Ölwechsel
 - Nächster Ölwechsel Nach Kilometern
 - Nächster Ölwechsel Nach Zeit
-- Letzter Service
+- Letzter Service / Inspection
