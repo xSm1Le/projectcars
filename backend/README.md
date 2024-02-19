@@ -13,7 +13,6 @@ Erstellen Sie eine `.env`-Datei im Wurzelverzeichnis und definieren Sie die Umge
 ## API-Endpunkte
 
 
-Ersetzen Sie `<Ihre-Domain>` mit der tatsächlichen Domain, auf der Ihr Server läuft.
 
 ### Benutzerregistrierung
 
