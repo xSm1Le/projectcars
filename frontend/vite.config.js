@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 const manifestForPlugin = {
-  registerType: 'autoUpdate',
+  registerType: 'promt',
   includeAssets: ['favicon.icon', 'apple-touc-icon.png', 'masked-icon.png'],
   manifest: {
     name: 'Project Cars',
@@ -18,6 +18,31 @@ const manifestForPlugin = {
       {
         src: './pwa-512x512.png',
         sizes: '512x512',
+        type: 'image/png'
+      },
+      {
+        src: './pwa-maskable-192x192.png',
+        sizes: '512x512',
+        type: 'image/png'
+      },
+      {
+        src: './pwa-maskable-512x512.png',
+        sizes: '512x512',
+        type: 'image/png'
+      },
+      {
+        src: './apple-touch-icon.png',
+        sizes: '512x512',
+        type: 'image/png'
+      },
+      {
+        src: './favicon-16x16.png',
+        sizes: '16x16',
+        type: 'image/png'
+      },
+      {
+        src: './favicon-32x32.png',
+        sizes: '32x32',
         type: 'image/png'
       }
     ]
