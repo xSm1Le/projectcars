@@ -1,33 +1,26 @@
 import React from 'react';
 import { Navbar } from '../reusables/nav';
+import './login.css';
 
 export const Login = () => {
     return (
         <section>
             <Navbar />
+            <div className="Loginpage">
             <h1>Login</h1>
             <ul>
                 <li>
-                    Benutzername
+                    <input type="email" placeholder="e-Mail Adresse / Benutzername" />
                 </li>
                 <li>
-                    Passwort
-                </li>
-                <li>
-                    Passwort Bestätigen
-                </li>
-                <li>
-                    e-Mail Adresse
+                    <input type="password" minlength="8" placeholder="Passwort" />
                 </li>
             </ul>
             <div>
-                <button>
-                    Login
-                </button>
-                <button>
-                    Registrieren
-                </button>
+                <input type="submit" value="Login" />
+                <input type="submit" value="Registrieren" />
             </div>
+            </div> 
 
         </section>
     )
