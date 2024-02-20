@@ -10,63 +10,99 @@ Erstellen Sie eine `.env`-Datei im Wurzelverzeichnis und definieren Sie die Umge
 
 `MONGODB_URI` (Ihre MongoDB-Verbindungszeichenfolge) und `JWT_SECRET` (ein Geheimnis für die Signierung von JWTs).
 
-## API-Endpunkte
+# Auto-Management-System API Endpunkte
 
+## Benutzerregistrierung
 
+**POST** `/users/register`
 
-### Benutzerregistrierung
+Registriert einen neuen Benutzer im System.
 
-- **URL**: `/users/register`
-- **Methode**: `POST`
-- **Body-Parameter**:
-  - `email`: Die E-Mail-Adresse des Benutzers.
-  - `password`: Das Passwort des Benutzers.
-  - `superPassword`: Das Super Passwort für die Passwortzurücksetzung.
+- **Body**:
+  - `email` (String) - Die E-Mail-Adresse des Benutzers.
+  - `password` (String) - Das Passwort des Benutzers.
+  - `superPassword` (String) - Das Super Passwort für Passwortwiederherstellungszwecke.
+
 - **Antwort**:
-  - **Erfolg**: Statuscode 201 mit einer Nachricht, dass der Benutzer erfolgreich registriert wurde.
-  - **Fehler**: Statuscode 400 bei Validierungsfehlern oder 500 bei Serverfehlern.
+  - **201** - Benutzer erfolgreich registriert.
+  - **400** - Benutzer existiert bereits.
+  - **500** - Bei der Registrierung ist ein Fehler aufgetreten.
 
-### Benutzeranmeldung
+## Benutzeranmeldung
 
-- **URL**: `/users/login`
-- **Methode**: `POST`
-- **Body-Parameter**:
-  - `email`: Die E-Mail-Adresse des Benutzers.
-  - `password`: Das Passwort des Benutzers.
+**POST** `/users/login`
+
+Meldet einen Benutzer an und gibt ein Token zurück.
+
+- **Body**:
+  - `email` (String) - Die E-Mail-Adresse des Benutzers.
+  - `password` (String) - Das Passwort des Benutzers.
+
 - **Antwort**:
-  - **Erfolg**: Statuscode 200 mit einem JWT im Antwortbody.
-  - **Fehler**: Statuscode 401 bei falschen Anmeldedaten oder 500 bei Serverfehlern.
+  - **200** - Anmeldung erfolgreich.
+  - **401** - Anmeldung fehlgeschlagen.
+  - **500** - Bei der Anmeldung ist ein Fehler aufgetreten.
 
-### Passwortzurücksetzung
+## Passwortzurücksetzung mit Super Passwort
 
-- **URL**: `/users/reset-password`
-- **Methode**: `POST`
-- **Body-Parameter**:
-  - `email`: Die E-Mail-Adresse des Benutzers.
-  - `superPassword`: Das Super Passwort des Benutzers.
-  - `newPassword`: Das neue Passwort des Benutzers.
+**POST** `/users/reset-password`
+
+Ermöglicht das Zurücksetzen des Benutzerpassworts unter Verwendung des Super Passworts.
+
+- **Body**:
+  - `email` (String) - Die E-Mail-Adresse des Benutzers.
+  - `superPassword` (String) - Das Super Passwort des Benutzers.
+  - `newPassword` (String) - Das neue Passwort des Benutzers.
+
 - **Antwort**:
-  - **Erfolg**: Statuscode 200 mit einer Nachricht, dass das Passwort erfolgreich zurückgesetzt wurde.
-  - **Fehler**: Statuscode 401 bei falschem Super Passwort oder 500 bei Serverfehlern.
+  - **200** - Passwort erfolgreich zurückgesetzt.
+  - **401** - Passwortzurücksetzung fehlgeschlagen.
+  - **500** - Fehler bei der Passwortzurücksetzung.
 
-### Alle Benutzer anzeigen
+## Benutzerlöschung
 
-- **URL**: `/users`
-- **Methode**: `GET`
+**POST** `/users/delete-user`
+
+Löscht einen Benutzer aus dem System.
+
+- **Body**:
+  - `email` (String) - Die E-Mail-Adresse des Benutzers.
+  - `superPassword` (String) - Das Super Passwort des Benutzers zur Authentifizierung.
+
 - **Antwort**:
-  - **Erfolg**: Statuscode 200 mit einer Liste von Benutzer-E-Mails.
-  - **Fehler**: Statuscode 500 bei Serverfehlern.
+  - **200** - Benutzer erfolgreich gelöscht.
+  - **401** - Benutzerlöschung fehlgeschlagen.
+  - **500** - Fehler bei der Benutzerlöschung.
 
-### E-Mail-Adresse ändern
+## Benutzerdaten abrufen
 
-- **URL**: `/user/email`
-- **Methode**: `PUT`
-- **Body-Parameter**:
-  - `userId`: Die ID des Benutzers, dessen E-Mail geändert werden soll.
-  - `newEmail`: Die neue E-Mail-Adresse des Benutzers.
+**GET** `/user/:userId`
+
+Ruft die Daten eines Benutzers ab.
+
+- **Parameter**:
+  - `userId` (String) - Die ID des Benutzers.
+
 - **Antwort**:
-  - **Erfolg**: Statuscode 200 mit einer Bestätigungsnachricht.
-  - **Fehler**: Statuscode 400, wenn die E-Mail bereits verwendet wird; Statuscode 404, wenn der Benutzer nicht gefunden wird; Statuscode 500 bei Serverfehlern.
+  - **200** - Benutzerdaten erfolgreich abgerufen.
+  - **404** - Benutzer nicht gefunden.
+  - **500** - Fehler beim Abrufen der Benutzerdaten.
+
+## Benutzerdaten aktualisieren
+
+**PUT** `/users/update-user`
+
+Aktualisiert die Daten eines Benutzers.
+
+- **Body**:
+  - `email` (String) - Die E-Mail-Adresse des Benutzers.
+  - `superPassword` (String) - Das Super Passwort des Benutzers zur Authentifizierung.
+  - `newPassword` (String) - Das neue Passwort des Benutzers.
+
+- **Antwort**:
+  - **200** - Benutzerdaten erfolgreich aktualisiert.
+  - **401** - Benutzerdatenaktualisierung fehlgeschlagen.
+  - **500** - Fehler bei der Benutzerdatenaktualisierung.
 
 ## Fehlerbehandlung
 
