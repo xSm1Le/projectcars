@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 const manifestForPlugin = {
   registerType: 'promt',
-  includeAssets: ['favicon.icon', 'apple-touc-icon.png', 'masked-icon.png'],
+  includeAssets: ['favicon.icon', 'apple-touc-icon.png', 'mask-icon.png'],
   manifest: {
     name: 'Project Cars',
     short_name: 'Project Cars',
