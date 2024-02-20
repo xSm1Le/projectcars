@@ -9,6 +9,8 @@ const manifestForPlugin = {
     name: 'Project Cars',
     short_name: 'Project Cars',
     description: 'eine Fahrzeugverwaltungsapp',
+    theme_color: '#406E8E',
+    background_color: '#406E8E',
     icons: [
       {
         src: './pwa-192x192.png',
