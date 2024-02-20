@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
 
 
 
-/* use('/api', routes)  */// Verwenden Sie die routes, wenn der Pfad /api ist
+use('/api', routes)  // Verwenden Sie die routes, wenn der Pfad /api ist
 
 const PORT = process.env.PORT || 5000
 

@@ -1,4 +1,4 @@
-import bcrypt from 'bcryptjs';
+import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 
@@ -47,81 +47,71 @@ export const loginUser = async (req, res) => {
 
 // Passwortzurücksetzung mit Super Passwort
 export const resetPassword = async (req, res) => {
-    try {
-      const { email, superPassword, newPassword } = req.body;
-      const user = await User.findOne({ email });
-  
-      if (!user || !(await bcrypt.compare(superPassword, user.superPassword))) {
-        return res.status(401).json({ message: 'Passwortzurücksetzung fehlgeschlagen.' });
-      }
-  
-      const hashedNewPassword = await bcrypt.hash(newPassword, 12);
-      user.password = hashedNewPassword;
-      await user.save();
-  
-      res.json({ message: 'Passwort erfolgreich zurückgesetzt.' });
-    } catch (error) {
-      res.status(500).json({ message: 'Fehler bei der Passwortzurücksetzung.' });
-    }
-  };
-  
-    // Benutzerlöschung
+  try {
+    const { email, superPassword, newPassword } = req.body;
+    const user = await User.findOne({ email });
 
-export const deleteUser = async (req, res) => {
-    try {
-      const { email, superPassword } = req.body;
-      const user = await User.findOne({ email });
-  
-      if (!user || !(await bcrypt.compare(superPassword, user.superPassword))) {
-        return res.status(401).json({ message: 'Benutzerlöschung fehlgeschlagen.' });
-      }
-  
-      await User.deleteOne({ email });
-  
-      res.json({ message: 'Benutzer erfolgreich gelöscht.' });
-    } catch (error) {
-      res.status(500).json({ message: 'Fehler bei der Benutzerlöschung.' });
+    if (!user || !(await bcrypt.compare(superPassword, user.superPassword))) {
+      return res.status(401).json({ message: 'Passwortzurücksetzung fehlgeschlagen.' });
     }
+
+    user.password = await bcrypt.hash(newPassword, 12);
+    await user.save();
+
+    res.json({ message: 'Passwort erfolgreich zurückgesetzt.' });
+  } catch (error) {
+    res.status(500).json({ message: 'Fehler bei der Passwortzurücksetzung.' });
   }
+};
+
+// Benutzerlöschung
+export const deleteUser = async (req, res) => {
+  try {
+    const { email, superPassword } = req.body;
+    const user = await User.findOne({ email });
+
+    if (!user || !(await bcrypt.compare(superPassword, user.superPassword))) {
+      return res.status(401).json({ message: 'Benutzerlöschung fehlgeschlagen.' });
+    }
+
+    await User.deleteOne({ email });
+
+    res.json({ message: 'Benutzer erfolgreich gelöscht.' });
+  } catch (error) {
+    res.status(500).json({ message: 'Fehler bei der Benutzerlöschung.' });
+  }
+};
 
 // Benutzerdaten abrufen
-
 export const getUserData = async (req, res) => {
-    try {
-      const user = await User.findById(req.params.userId);
-  
-      if (!user) {
-        return res.status(404).json({ message: 'Benutzer nicht gefunden.' });
-      }
-  
-      res.json({ user });
-    } catch (error) {
-      res.status(500).json({ message: 'Fehler beim Abrufen der Benutzerdaten.' });
+  try {
+    const user = await User.findById(req.params.userId);
+
+    if (!user) {
+      return res.status(404).json({ message: 'Benutzer nicht gefunden.' });
     }
+
+    res.json({ user });
+  } catch (error) {
+    res.status(500).json({ message: 'Fehler beim Abrufen der Benutzerdaten.' });
   }
+};
 
 // Benutzerdaten aktualisieren
-
 export const updateUserData = async (req, res) => {
-    try {
-      const { email, superPassword, newPassword } = req.body;
-      const user = await User
-        .findOne({ email });
+  try {
+    const { email, superPassword, newPassword } = req.body;
+    const user = await User.findOne({ email });
 
-        if (!user || !(await bcrypt.compare(superPassword, user.superPassword))) {
-          return res.status(401).json({ message: 'Benutzerdatenaktualisierung fehlgeschlagen.' });
-        }
-
-        const hashedNewPassword = await bcrypt.hash(newPassword, 12);
-        user.password = hashedNewPassword;
-        await user.save();
-
-        res.json({ message: 'Benutzerdaten erfolgreich aktualisiert.' });
-        }
-    catch (error) {
-
-        res.status(500).json({ message: 'Fehler bei der Benutzerdatenaktualisierung.' });
-        }
+    if (!user || !(await bcrypt.compare(superPassword, user.superPassword))) {
+      return res.status(401).json({ message: 'Benutzerdatenaktualisierung fehlgeschlagen.' });
     }
 
-    
+    user.password = await bcrypt.hash(newPassword, 12);
+    await user.save();
+
+    res.json({ message: 'Benutzerdaten erfolgreich aktualisiert.' });
+  } catch (error) {
+    res.status(500).json({ message: 'Fehler bei der Benutzerdatenaktualisierung.' });
+  }
+};

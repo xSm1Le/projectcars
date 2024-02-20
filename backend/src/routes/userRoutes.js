@@ -3,8 +3,9 @@ import {
   registerUser,
   loginUser,
   resetPassword,
-  getAllUsers,
-  changeUserEmail
+  deleteUser,
+  getUserData,
+  updateUserData
 } from '../controllers/UserController.js';
 
 const router = express.Router();
@@ -18,11 +19,15 @@ router.post('/login', loginUser);
 // Passwort mit Super Passwort zurücksetzen
 router.post('/reset-password', resetPassword);
 
-// Alle Benutzer anzeigen
-router.get('/', getAllUsers);
+// Benutzer löschen
+router.delete('/delete-user', deleteUser);
 
-// E-Mail-Adresse eines Benutzers ändern
-router.put('/email', changeUserEmail);
+// Benutzerdaten abrufen
+router.get('/:userId', getUserData);
+
+// Benutzerdaten aktualisieren
+router.put('/update-user', updateUserData);
+
 
 export default router;
 // Path: backend/src/config/db.js
