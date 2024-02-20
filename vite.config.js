@@ -10,7 +10,7 @@ const manifestForPlugin = {
     short_name: 'Project Cars',
     description: 'eine Fahrzeugverwaltungsapp',
     theme_color: '#406E8E',
-    background_color: '#406E8E',
+    background_color: '#161925',
     icons: [
       {
         src: './pwa-192x192.png',
@@ -24,7 +24,7 @@ const manifestForPlugin = {
       },
       {
         src: './pwa-maskable-192x192.png',
-        sizes: '512x512',
+        sizes: '192x192',
         type: 'image/png'
       },
       {
@@ -34,7 +34,7 @@ const manifestForPlugin = {
       },
       {
         src: './apple-touch-icon.png',
-        sizes: '512x512',
+        sizes: '180x180',
         type: 'image/png'
       },
       {
