@@ -45,7 +45,11 @@ const manifestForPlugin = {
         sizes: '32x32',
         type: 'image/png'
       }
-    ]
+    ],
+    start_url: '/',
+    display: 'standalone',
+    scope: '/',
+    orientation: 'portrait-primary',
   }
 }
 
