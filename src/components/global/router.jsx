@@ -4,6 +4,7 @@ import App from "../../App.jsx";
 //* Alle Router
 import { Landingpage } from "../Pages/landingpage";
 import { Login } from "../Pages/login.jsx";
+import { Kalender } from "../Pages/kalender.jsx";
 
 
 
@@ -19,6 +20,10 @@ export const router = createBrowserRouter([
             {
                 path: "login", 
                 element: <Login />
+            },
+            {
+                path: "kalender", 
+                element: <Kalender />
             },
         ],
     },

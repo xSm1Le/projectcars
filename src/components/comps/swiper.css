@@ -1,8 +1,8 @@
 .swiper {
     width: 100%;
     height: 100%;
-    border: 5px solid black;
     margin: 1rem 0 2rem 0;
+    
 }
   
 .swiper-slide {
@@ -17,6 +17,7 @@
     width: 100%;
 }
 
-.slideDiv {
+.slideDiv{
     text-align: center;
+    margin-top: 1rem;
 }

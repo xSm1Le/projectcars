@@ -13,9 +13,7 @@ export const SlideShow =  () => {
       <Swiper
         spaceBetween={30}
         effect={'fade'}
-        //navigationspfeile
         navigation={true}
-        //navigierungspunkte
         pagination={{
             clickable: true
         }}

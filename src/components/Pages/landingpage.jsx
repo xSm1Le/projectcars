@@ -8,15 +8,15 @@ export const Landingpage = () => {
         <section>
             <Navbar />
 
-            <div className='yourCarsLP'>
+            <section className='yourCarsLP'>
                 <h2>Deine Fahrzeuge</h2>
                 <SlideShow />
-            </div>
-            <div className='LPButtons'>
-                <button className='LPButton'>Fahrzeug verwalten</button>
-                <button className='LPButton'>Fahrzeug hinzufügen</button>
-                <button className='LPButton'>Termin verwalten</button>
-            </div>
+                <div className='LPButtons'>
+                    <button className='LPButton'>Fahrzeug verwalten</button>
+                    <button className='LPButton'>Fahrzeug hinzufügen</button>
+                    <button className='LPButton'>Termin verwalten</button>
+                </div>
+            </section>
         </section>
     )
 }
