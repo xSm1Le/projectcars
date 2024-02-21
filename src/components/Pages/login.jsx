@@ -13,7 +13,7 @@ export const Login = () => {
                     <input type="email" placeholder="e-Mail Adresse / Benutzername" />
                 </li>
                 <li>
-                    <input type="password" minlength="8" placeholder="Passwort" />
+                    <input type="password" minLength="8" placeholder="Passwort" />
                 </li>
             </ul>
             <div>
