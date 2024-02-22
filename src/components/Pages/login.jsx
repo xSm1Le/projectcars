@@ -13,7 +13,6 @@ export const Login = () => {
 
     return (
         <section>
-            <Navbar />
             <div className="Loginpage">
             <h1>Login</h1>
             <ul>

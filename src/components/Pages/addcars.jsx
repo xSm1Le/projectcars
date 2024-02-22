@@ -5,7 +5,6 @@ import "./addcars.css";
 export const AddCars = () => {
     return (
         <section>
-            <Navbar />
             <div className="addCarsOverview">
                 <div className="topButtons">
                     <button>Bild Hinzufügen</button>

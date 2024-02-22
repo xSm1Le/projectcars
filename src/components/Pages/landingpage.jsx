@@ -2,19 +2,27 @@ import React from 'react';
 import { Navbar } from '../reusables/nav';
 import { SlideShow } from '../comps/swiper';
 import './landingpage.css';
+import { Link } from 'react-router-dom';
+
 
 export const Landingpage = () => {
     return (
         <section>
-            <Navbar />
-
             <section className='yourCarsLP'>
                 <h2>Deine Fahrzeuge</h2>
                 <SlideShow />
-                <div className='LPButtons'>
-                    <button className='LPButton'>Fahrzeug verwalten</button>
-                    <button className='LPButton'>Fahrzeug hinzufügen</button>
-                    <button className='LPButton'>Termin verwalten</button>
+                <div >
+                    <ul className='LPButtons'>
+                        <li>
+                            <Link to="/" className='LPButton'>Fahrzeug verwalten</Link>
+                        </li>
+                        <li>
+                            <Link to="/addcars" className='LPButton'>Fahrzeug hinzufügen</Link>
+                        </li>
+                        <li>
+                            <Link to="/" className='LPButton'>Termin verwalten</Link>
+                        </li>
+                    </ul>
                 </div>
             </section>
         </section>

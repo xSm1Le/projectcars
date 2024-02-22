@@ -6,7 +6,6 @@ import './register.css';
 export const Register = () => {
     return (
         <section>
-            <Navbar />
             <div className="registerPage">
                 <h1>Registrierung</h1>
                 <ul>
