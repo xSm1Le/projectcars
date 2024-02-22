@@ -2,7 +2,15 @@ import React from 'react';
 import { Navbar } from '../reusables/nav';
 import './login.css';
 
+import { useNavigate } from 'react-router';
+
 export const Login = () => {
+    const navigate = useNavigate();
+
+    const navigateToRegister = () => {
+        navigate('/register');
+    };
+
     return (
         <section>
             <Navbar />
@@ -18,7 +26,8 @@ export const Login = () => {
             </ul>
             <div>
                 <input type="submit" value="Login" />
-                <input type="submit" value="Registrieren" />
+                <input type="submit" value="Passwort vergessen" />
+                <input type="submit" value="Registrieren" onClick={navigateToRegister} />
             </div>
             </div> 
 

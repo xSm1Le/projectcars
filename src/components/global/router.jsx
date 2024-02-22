@@ -4,6 +4,8 @@ import App from "../../App.jsx";
 //* Alle Router
 import { Landingpage } from "../Pages/landingpage";
 import { Login } from "../Pages/login.jsx";
+import { Register } from "../Pages/register.jsx";
+import { AddCars } from "../Pages/addcars.jsx";
 
 
 
@@ -19,6 +21,14 @@ export const router = createBrowserRouter([
             {
                 path: "login", 
                 element: <Login />
+            },
+            {
+                path: "register", 
+                element: <Register />
+            },
+            {
+                path: "addcars",
+                element: <AddCars />
             },
         ],
     },
