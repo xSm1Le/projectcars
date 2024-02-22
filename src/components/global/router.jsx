@@ -5,6 +5,7 @@ import App from "../../App.jsx";
 import { Landingpage } from "../Pages/landingpage";
 import { Login } from "../Pages/login.jsx";
 import { Register } from "../Pages/register.jsx";
+import { AddCars } from "../Pages/addcars.jsx";
 
 
 
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
             {
                 path: "register", 
                 element: <Register />
+            },
+            {
+                path: "addcars",
+                element: <AddCars />
             },
         ],
     },
