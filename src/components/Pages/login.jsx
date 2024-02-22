@@ -1,7 +1,5 @@
 import React from 'react';
-import { Navbar } from '../reusables/nav';
 import './login.css';
-
 import { useNavigate } from 'react-router';
 
 export const Login = () => {

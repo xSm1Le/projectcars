@@ -1,5 +1,4 @@
 import React from 'react';
-import { Navbar } from '../reusables/nav';
 import { SlideShow } from '../comps/swiper';
 import './landingpage.css';
 import { Link } from 'react-router-dom';

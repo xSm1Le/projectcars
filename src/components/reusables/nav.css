@@ -28,3 +28,12 @@
     height: 50px;
     width: auto;
 }
+
+.navButton {
+    height: 2.5rem;
+    width: 4rem;
+    background-color: #cbf7ed;
+    border: 1px solid #cbf7ed;
+    border-radius: 10px;
+    padding: 0.8rem;
+}

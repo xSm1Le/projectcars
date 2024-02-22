@@ -1,4 +1,4 @@
-import { Navbar } from "../reusables/nav"
+
 
 
 export const Termine = () => {

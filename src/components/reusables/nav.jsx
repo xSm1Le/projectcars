@@ -15,10 +15,10 @@ export const Navbar = () => {
                     </h1> 
                 </li>
                 <li>
-                    <li className="Homebutton">
+                    <li className="navButton">
                     <Link to="/">Home</Link>
                     </li>
-                    <li className="Loginbutton">
+                    <li className="navButton">
                     <Link to="/login">Login</Link>
                     </li>
                 </li>

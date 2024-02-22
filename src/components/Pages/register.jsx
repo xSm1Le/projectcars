@@ -1,5 +1,4 @@
 import React from 'react';
-import { Navbar } from '../reusables/nav';
 import './register.css';
 
 

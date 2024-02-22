@@ -1,5 +1,4 @@
 import React from "react";
-import { Navbar } from "../reusables/nav";
 import "./addcars.css";
 import { MyVehiclesButtons } from "../reusables/myvehicles";
 
