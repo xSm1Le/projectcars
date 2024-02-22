@@ -8,6 +8,7 @@ import { Register } from "../Pages/register.jsx";
 import { AddCars } from "../Pages/addcars.jsx";
 import { Kalender } from "../Pages/kalender.jsx";
 import { Termine } from "../Pages/termine.jsx";
+import { MyVehiclesButtons } from "../reusables/myvehicles.jsx";
 
 
 
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
                 path: "termine", 
                 element: <Termine />
             },
+            {
+                path: "myvehicles", 
+                element: <MyVehiclesButtons />
+            }
         ],
     },
 ]);

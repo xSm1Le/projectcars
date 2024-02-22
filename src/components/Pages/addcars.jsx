@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar } from "../reusables/nav";
 import "./addcars.css";
+import { MyVehiclesButtons } from "../reusables/myvehicles";
 
 export const AddCars = () => {
     return (
@@ -11,11 +12,7 @@ export const AddCars = () => {
                     <button>Fahrzeug Hinzufügen</button>
                 </div>
                 <div>
-                    <img src="placeholder" alt="" />
-                    <img src="placeholder" alt="" />
-                    <img src="placeholder" alt="" />
-                    <img src="placeholder" alt="" />
-                    <img src="placeholder" alt="" />
+                    <MyVehiclesButtons />
                 </div>
                 <div className="angaben">
                     <input type="text" placeholder="Kennzeichen" />
@@ -31,7 +28,6 @@ export const AddCars = () => {
                     <input type="text" placeholder="Nächster Ölwechsel Nach Kilometern" />
                     <input type="text" placeholder="Datum Nächster Ölwechsel" />
                     <input type="text" placeholder="letzter Service" />
-                    
                 </div>
             </div>
         </section>
