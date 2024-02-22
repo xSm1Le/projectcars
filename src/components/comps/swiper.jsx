@@ -21,7 +21,7 @@ export const SlideShow =  () => {
         className="mySwiper"
       >
         <SwiperSlide>
-            <div className='slideDiv'>
+            <div className='slideDiv' >
                 <h3>BSP VW Passat</h3>
                 <img src="../pwa-maskable-192x192.png" alt="auto" /> 
             </div>
