@@ -1,10 +1,11 @@
 import React from 'react';
 import './register.css';
+import './buttons.css';
 
 
 export const Register = () => {
     return (
-        <section>
+        <section className="registerSection">
             <div className="registerPage">
                 <h1>Registrierung</h1>
                 <ul>
@@ -19,7 +20,7 @@ export const Register = () => {
                     </li>
                 </ul>
                 <div>
-                    <input type="submit" value="Registrierung Abschließen" />
+                    <button class="button-13" role="button">Registrieren</button>
                 </div>
             </div>
         </section>
