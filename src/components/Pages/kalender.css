@@ -1,0 +1,26 @@
+.yourDates {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.datesh2 {
+    margin: 1rem 0;
+}
+
+.DButtons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 2.5rem;
+    background-color: #161925;
+    border-radius: 5px;
+}
+
+.DButton {
+    height: 2rem;
+    width: 4.5rem;
+    background-color: #cbf7ed;
+    border: 1px solid #cbf7ed;
+    border-radius: 10px;
+}

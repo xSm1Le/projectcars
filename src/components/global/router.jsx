@@ -6,6 +6,10 @@ import { Landingpage } from "../Pages/landingpage";
 import { Login } from "../Pages/login.jsx";
 import { Register } from "../Pages/register.jsx";
 import { AddCars } from "../Pages/addcars.jsx";
+import { Kalender } from "../Pages/kalender.jsx";
+import { Termine } from "../Pages/termine.jsx";
+import { MyVehiclesButtons } from "../reusables/myvehicles.jsx";
+import { YourCars } from "../Pages/yourCars.jsx";
 
 
 
@@ -29,6 +33,22 @@ export const router = createBrowserRouter([
             {
                 path: "addcars",
                 element: <AddCars />
+            },
+            {
+                path: "kalender", 
+                element: <Kalender />
+            },
+            {
+                path: "termine", 
+                element: <Termine />
+            },
+            {
+                path: "myvehicles", 
+                element: <MyVehiclesButtons />
+            },
+            {
+                path: "mycars", 
+                element: <YourCars />
             },
         ],
     },

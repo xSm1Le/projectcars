@@ -4,41 +4,33 @@
     box-sizing: border-box;
 }
 
-.Loginpage {
+.yourCars {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 70vh;
-    width: 70vw;
-    background-color: #ecededb7;
-    border: #00000021;
-    border-radius: 4%;
+    margin-top: 20px;
 }
 
-.loginsection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-ul {
-    list-style: none;
-}
-
-.buttonsLogin {
+ .allImages {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 20px;
+    
+    width: 50vw;
+    height: 100vh;
 }
 
-.loginButton {
-    margin: 2% 2% 2% 2%;
-    padding: 2% 2% 2% 2%;
-}
-
-ul li {
-    margin: 2% 2% 2% 2%;
-    padding: 2% 2% 2% 2%;
+.carImg {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2px 2px 2px 2px;
+    border: 2px solid black;
 }

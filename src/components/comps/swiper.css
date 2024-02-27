@@ -1,0 +1,23 @@
+.swiper {
+    width: 80vw;
+    height: 50vh;
+    margin: 1rem 0 2rem 0;
+    
+}
+  
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    /* hintergrund weiß weil die h3 sonst überlappt */
+    background-color: white;
+}
+  
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+.slideDiv{
+    text-align: center;
+    margin-top: 1rem;
+}

@@ -1,0 +1,33 @@
+.LPDates {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+
+.yourCarsLP {
+    text-align: center;
+    margin: 2rem 0;
+    border: 2px solid black;
+    border-radius: 1rem;
+}
+
+.LPButtons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 4rem;
+    background-color: #161925;
+    border-radius: 5px;
+}
+
+.LPButton {
+    height: 7rem;
+    width: 6rem;
+    background-color: #cbf7ed;
+    border: 1px solid #cbf7ed;
+    border-radius: 10px;
+    padding: 0.8rem;
+}

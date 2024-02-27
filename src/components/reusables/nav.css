@@ -1,11 +1,12 @@
 .navbar {
-    background-color: #8d8b8b;
-    color: #fff;
+    background-color: #161925;
+    color: #cbf7ed;
     padding: 10px;
+    width: 100vw;
 }
 
 .PJName {
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: bold;
 }
 
@@ -15,13 +16,6 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
-
-.navbar ul li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
 }
 
 .navbar ul li img {
