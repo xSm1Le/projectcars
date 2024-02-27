@@ -1,7 +1,17 @@
+.LPDates {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+
 .yourCarsLP {
     text-align: center;
     margin: 2rem 0;
-/*     border: 2px solid black; */
+    border: 2px solid black;
+    border-radius: 1rem;
 }
 
 .LPButtons {

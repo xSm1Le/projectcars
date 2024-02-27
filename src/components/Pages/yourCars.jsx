@@ -1,11 +1,10 @@
-import React from "react";
 import { MyVehiclesButtons } from "../reusables/myvehicles.jsx";
 import './yourCars.css';
 
 
 export const YourCars = () => {
     return (
-        <section>
+        <section className="yourCars">
             <div>
                 <MyVehiclesButtons />
             </div>

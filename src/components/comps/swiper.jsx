@@ -29,22 +29,21 @@ export const SlideShow =  () => {
         <SwiperSlide>
             <div className='slideDiv'>
                 <h3>BSP Audi Q7</h3>
-                <img src="./pwa-maskable-192x192.png" alt="auto" />
+                <img src="../pwa-maskable-192x192.png" alt="auto" />
             </div>
         </SwiperSlide>
         <SwiperSlide>
             <div className='slideDiv'>
                 <h3>BSP BMW E90</h3>
-                <img src="./pwa-maskable-192x192.png" alt="auto" />
+                <img src="../pwa-maskable-192x192.png" alt="auto" />
             </div>
         </SwiperSlide>
         <SwiperSlide>
             <div className='slideDiv'>
                 <h3>BSP Skoda superb</h3>
-                <img src="./pwa-maskable-192x192.png" alt="auto" />
+                <img src="../pwa-maskable-192x192.png" alt="auto" />
             </div>
         </SwiperSlide>
-        ...
       </Swiper>
     );
   };

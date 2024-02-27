@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-section {
+.yourCars {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +12,7 @@ section {
     margin-top: 20px;
 }
 
-.allImages {
+ .allImages {
     display: flex;
     justify-content: center;
     align-items: center;
