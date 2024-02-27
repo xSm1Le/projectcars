@@ -2,10 +2,11 @@
     background-color: #161925;
     color: #cbf7ed;
     padding: 10px;
+    width: 100vw;
 }
 
 .PJName {
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: bold;
 }
 
@@ -17,23 +18,7 @@
     margin: 0;
 }
 
-.navbar ul li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
-}
-
 .navbar ul li img {
     height: 50px;
     width: auto;
-}
-
-.navButton {
-    height: 2.5rem;
-    width: 4rem;
-    background-color: #cbf7ed;
-    border: 1px solid #cbf7ed;
-    border-radius: 10px;
-    padding: 0.8rem;
 }

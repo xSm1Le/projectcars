@@ -1,8 +1,20 @@
 import { Link } from 'react-router-dom';
 import './nav.css';
+import '../Pages/buttons.css';
+import { useNavigate } from 'react-router';
 
 
 export const Navbar = () => {
+    const navigate = useNavigate();
+
+    const navigateToHome = () => {
+        navigate('/');
+    };
+
+    const navigateToLogin = () => {
+        navigate('/login');
+    };
+
     return (
         <nav className="navbar">
             <ul>
@@ -15,12 +27,8 @@ export const Navbar = () => {
                     </h1> 
                 </li>
                 <li>
-                    <li className="navButton">
-                    <Link to="/">Home</Link>
-                    </li>
-                    <li className="navButton">
-                    <Link to="/login">Login</Link>
-                    </li>
+                    <button class="button-13" role="button" onClick={navigateToHome}>Home</button>
+                    <button class="button-13" role="button" onClick={navigateToLogin}>Einloggen</button>
                 </li>
             </ul>
         </nav>
