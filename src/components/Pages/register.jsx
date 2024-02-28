@@ -18,7 +18,7 @@ export const Register = () => {
         const handleSubmit = async (event) => {
           event.preventDefault();
       
-          const response = await fetch('/api/users/register', {
+          const response = await fetch('https://carsdatabase.onrender.com/api/users/register', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -64,6 +64,9 @@ export const Register = () => {
                 </form>
                 <div>
                     <button class="button-13" type="submit">Registrieren</button>
+                </div>
+                <div>
+                    console.log(message);
                 </div>
                 <div>
                 <button class="button-13" role="button" onClick={navigateToLogin}>Abbrechen</button>
