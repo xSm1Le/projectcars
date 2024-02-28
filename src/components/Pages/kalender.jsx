@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-import { Navbar } from "../reusables/nav";
 import { Calendar } from 'react-calendar';
 
 import 'react-calendar/dist/Calendar.css';
@@ -15,7 +14,6 @@ export const Kalender = () => {
 
     return (
         <section>
-            <Navbar />
             <section className='yourDates'>
                 <h2 className='datesh2'>Kalender</h2>
                 <Calendar onChange={onChange} value={value} />
