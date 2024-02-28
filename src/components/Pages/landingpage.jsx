@@ -2,11 +2,26 @@ import React from 'react';
 import { SlideShow } from '../comps/swiper';
 import './landingpage.css';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 
 export const Landingpage = () => {
+    const navigate = useNavigate();
+
+    const navigateToAddcars = () => {
+        navigate('/addcars');
+    };
+
+    const navigateToTermine = () => {
+        navigate('/termine');
+    };
+
+    const navigateToMyCars = () => {
+        navigate('/mycars');
+    };
+
     return (
-        <section>
+        <section className="mainLanding">
             <section className='yourDateLP' >
                 <div className='LPDates'>
                     <img src="../favicon-32x32.png" alt="beispiel auto" />
@@ -18,13 +33,13 @@ export const Landingpage = () => {
                 <SlideShow />
                 <ul className='LPButtons'>
                     <li>
-                        <Link to="/" className='LPButton'>Fahrzeug verwalten</Link>
+                    <button class="button-13" role="button" onClick={navigateToMyCars}>Fahrzeuge</button>
                     </li>
                     <li>
-                        <Link to="/addcars" className='LPButton'>Fahrzeug hinzufügen</Link>
+                    <button class="button-13" role="button" onClick={navigateToAddcars}>Hinzufügen</button>
                     </li>
                     <li>
-                        <Link to="/kalender" className='LPButton'>Termin verwalten</Link>
+                    <button class="button-13" role="button" onClick={navigateToTermine}>Termine</button>
                     </li>
                 </ul>
             </section>

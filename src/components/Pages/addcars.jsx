@@ -1,14 +1,15 @@
 import React from "react";
 import "./addcars.css";
 import { MyVehiclesButtons } from "../reusables/myvehicles";
+import './buttons.css';
 
 export const AddCars = () => {
     return (
         <section>
             <div className="addCarsOverview">
                 <div className="topButtons">
-                    <button>Bild Hinzufügen</button>
-                    <button>Fahrzeug Hinzufügen</button>
+                    <button class="button-13" role="button">Bild Hinzufügen</button>
+                    <button class="button-13" role="button">Fahrzeug Hinzufügen</button>
                 </div>
                 <div>
                     <MyVehiclesButtons />

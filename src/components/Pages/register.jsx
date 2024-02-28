@@ -1,10 +1,18 @@
 import React from 'react';
 import './register.css';
+import './buttons.css';
+import { useNavigate } from 'react-router';
 
 
 export const Register = () => {
+    const navigate = useNavigate();
+
+    const navigateToLogin = () => {
+        navigate('/login');
+    };
+
     return (
-        <section>
+        <section className="registerSection">
             <div className="registerPage">
                 <h1>Registrierung</h1>
                 <ul>
@@ -19,7 +27,10 @@ export const Register = () => {
                     </li>
                 </ul>
                 <div>
-                    <input type="submit" value="Registrierung Abschließen" />
+                    <button class="button-13" role="button">Registrieren</button>
+                </div>
+                <div>
+                <button class="button-13" role="button" onClick={navigateToLogin}>Abbrechen</button>
                 </div>
             </div>
         </section>

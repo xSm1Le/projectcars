@@ -1,6 +1,7 @@
 import React from 'react';
 import './login.css';
 import { useNavigate } from 'react-router';
+import './buttons.css';
 
 export const Login = () => {
     const navigate = useNavigate();
@@ -10,7 +11,7 @@ export const Login = () => {
     };
 
     return (
-        <section>
+        <section className="loginsection">
             <div className="Loginpage">
             <h1>Login</h1>
             <ul>
@@ -21,13 +22,18 @@ export const Login = () => {
                     <input type="password" minLength="8" placeholder="Passwort" />
                 </li>
             </ul>
-            <div>
-                <input type="submit" value="Login" />
-                <input type="submit" value="Passwort vergessen" />
-                <input type="submit" value="Registrieren" onClick={navigateToRegister} />
+            <div className="buttonsLogin">
+                <div className="loginButton">
+                <button class="button-13" role="submit">Einloggen</button>
+                </div>
+                <div>
+                    <button class="button-13" role="button" onClick={navigateToRegister}>Passwort Vergessen?</button>
+                </div>
+                <div>
+                    <button class="button-13" role="button" onClick={navigateToRegister}>Registrierung</button>
+                </div>
             </div>
             </div> 
-
         </section>
     )
 }

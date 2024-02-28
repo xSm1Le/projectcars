@@ -9,17 +9,36 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 50vh;
-    width: 50vw;
-    background-color: #927d7d;
+    height: 70vh;
+    width: 70vw;
+    background-color: #ecededb7;
     border: #00000021;
-    border-radius: 10%;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 3%;
-    margin-bottom: 3%;
+    border-radius: 4%;
+}
+
+.loginsection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 ul {
     list-style: none;
+}
+
+.buttonsLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loginButton {
+    margin: 2% 2% 2% 2%;
+    padding: 2% 2% 2% 2%;
+}
+
+ul li {
+    margin: 2% 2% 2% 2%;
+    padding: 2% 2% 2% 2%;
 }
