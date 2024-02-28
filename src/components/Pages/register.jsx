@@ -61,12 +61,11 @@ export const Register = () => {
                             value={superPassword} onChange={(e) => setSuperPassword(e.target.value)} required />
                         </li>
                     </ul>
-                </form>
                 <div>
                     <button class="button-13" type="submit">Registrieren</button>
                 </div>
+                </form>
                 <div>
-                    console.log(message);
                 </div>
                 <div>
                 <button class="button-13" role="button" onClick={navigateToLogin}>Abbrechen</button>
