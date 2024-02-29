@@ -1,7 +1,6 @@
 import React from 'react';
 import { SlideShow } from '../reusables/swiper';
 import './landingpage.css';
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router';
 
 
