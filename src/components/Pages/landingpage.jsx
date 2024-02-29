@@ -11,8 +11,8 @@ export const Landingpage = () => {
         navigate('/addcars');
     };
 
-    const navigateToTermine = () => {
-        navigate('/termine');
+    const navigateToKalender = () => {
+        navigate('/kalender');
     };
 
     const navigateToMyCars = () => {
@@ -38,7 +38,7 @@ export const Landingpage = () => {
                     <button className="button-13" role="button" onClick={navigateToAddcars}>Hinzufügen</button>
                     </li>
                     <li>
-                    <button className="button-13" role="button" onClick={navigateToTermine}>Termine</button>
+                    <button className="button-13" role="button" onClick={navigateToKalender}>Termine</button>
                     </li>
                 </ul>
             </section>
