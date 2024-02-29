@@ -33,13 +33,13 @@ export const Landingpage = () => {
                 <SlideShow />
                 <ul className='LPButtons'>
                     <li>
-                    <button class="button-13" role="button" onClick={navigateToMyCars}>Fahrzeuge</button>
+                    <button className="button-13" role="button" onClick={navigateToMyCars}>Fahrzeuge</button>
                     </li>
                     <li>
-                    <button class="button-13" role="button" onClick={navigateToAddcars}>Hinzufügen</button>
+                    <button className="button-13" role="button" onClick={navigateToAddcars}>Hinzufügen</button>
                     </li>
                     <li>
-                    <button class="button-13" role="button" onClick={navigateToTermine}>Termine</button>
+                    <button className="button-13" role="button" onClick={navigateToTermine}>Termine</button>
                     </li>
                 </ul>
             </section>

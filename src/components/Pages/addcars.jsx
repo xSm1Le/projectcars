@@ -8,8 +8,8 @@ export const AddCars = () => {
         <section>
             <div className="addCarsOverview">
                 <div className="topButtons">
-                    <button class="button-13" role="button">Bild Hinzufügen</button>
-                    <button class="button-13" role="button">Fahrzeug Hinzufügen</button>
+                    <button className="button-13" role="button">Bild Hinzufügen</button>
+                    <button className="button-13" role="button">Fahrzeug Hinzufügen</button>
                 </div>
                 <div>
                     <MyVehiclesButtons />

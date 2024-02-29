@@ -14,7 +14,7 @@ export const Register = () => {
     const navigateToLogin = () => {
         navigate('/login');
     };
-        
+
         const handleSubmit = async (event) => {
           event.preventDefault();
       
@@ -62,13 +62,16 @@ export const Register = () => {
                         </li>
                     </ul>
                 <div>
-                    <button class="button-13" type="submit">Registrieren</button>
+                    <button className="button-13" type="submit">Registrieren</button>
                 </div>
                 </form>
                 <div>
                 </div>
                 <div>
-                <button class="button-13" role="button" onClick={navigateToLogin}>Abbrechen</button>
+                <button className="button-13" role="button" onClick={navigateToLogin}>Abbrechen</button>
+                </div>
+                <div>
+                    <p>{message}</p>
                 </div>
             </div>
         </section>
