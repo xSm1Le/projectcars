@@ -27,8 +27,8 @@ export const Navbar = () => {
                     </h1> 
                 </li>
                 <li>
-                    <button class="button-13" role="button" onClick={navigateToHome}>Home</button>
-                    <button class="button-13" role="button" onClick={navigateToLogin}>Einloggen</button>
+                    <button className="button-13" role="button" onClick={navigateToHome}>Home</button>
+                    <button className="button-13" role="button" onClick={navigateToLogin}>Einloggen</button>
                 </li>
             </ul>
         </nav>

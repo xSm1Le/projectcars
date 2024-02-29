@@ -4,11 +4,11 @@
     box-sizing: border-box;
 }
 
-section {
+.vehicleSection {
     margin: 2vh 0;
 }
 
-img {
+.vehicleimg {
     width: 8vh;
 }
 
