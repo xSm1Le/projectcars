@@ -2,7 +2,7 @@ import React from 'react';
 import './register.css';
 import './buttons.css';
 import { useNavigate } from 'react-router';
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 
 export const Register = () => {
     const navigate = useNavigate();
@@ -10,6 +10,7 @@ export const Register = () => {
     const [password, setPassword] = useState('');
     const [superPassword, setSuperPassword] = useState('');
     const [message, setMessage] = useState('');
+    useEffect(() => {} , [message]);
     
     const navigateToLogin = () => {
         navigate('/login');
