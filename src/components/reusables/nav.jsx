@@ -54,8 +54,8 @@ export const Navbar = () => {
                             <span></span>
                             <span></span>
                                 <ul id="menu">
-                                    <a href="#"><li><button className="button-13" role="button" onClick={handleLogout}>Ausloggen</button></li></a>
-                                    <a href="#"><li><button className="button-13" role="button">Einstellungen</button></li></a>
+                                    <a href=""><li><button className="button-13" role="button" onClick={handleLogout}>Ausloggen</button></li></a>
+                                    <a href=""><li><button className="button-13" role="button">Einstellungen</button></li></a>
                                 </ul>
                             </div>
                         </nav>}
