@@ -39,10 +39,16 @@ export const Navbar = () => {
                         Project Cars
                     </h1> 
                 </li>
-                <li>
+                <li className="iconButtons">
+                    <div>
+                        {token && <img src="../benutzer.png" alt="Benutzer Icon" className="benutzericonNav" />}
+
+                    </div>
+                    <div>
                     {!token && <button className="button-13" role="button" onClick={navigateToLogin}>Einloggen</button>}
                     {!token && <button className="button-13" role="button" onClick={navigateToRegister}>Registrieren</button>}
                     {token && <button className="button-13" role="button" onClick={handleLogout}>Ausloggen</button>}
+                    </div>
                 </li>
             </ul>
         </nav>

@@ -22,3 +22,17 @@
     height: 50px;
     width: auto;
 }
+
+.iconButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 5%;
+}
+
+.benutzericonNav {
+    border-radius: 50%;
+    background-color: #cbf7ed;
+    padding: 8px;
+    margin-right: 8px;
+}
