@@ -1,9 +1,9 @@
 import React from "react";
-import "./addcars.css";
+import "./addvehicles.css";
 import { MyVehiclesButtons } from "../reusables/myvehicles";
 import './buttons.css';
 
-export const AddCars = () => {
+export const AddAllCars = () => {
     return (
         <section>
             <div className="addCarsOverview">

@@ -8,7 +8,7 @@ export const Landingpage = () => {
     const navigate = useNavigate();
 
     const navigateToAddcars = () => {
-        navigate('/addcars');
+        navigate('/add');
     };
 
     const navigateToKalender = () => {
