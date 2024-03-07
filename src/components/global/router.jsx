@@ -5,7 +5,7 @@ import App from "../../App.jsx";
 import { Landingpage } from "../Pages/landingpage";
 import { Login } from "../Pages/login.jsx";
 import { Register } from "../Pages/register.jsx";
-import { AddCars } from "../Pages/addcars.jsx";
+import { AddAllCars } from "../Pages/addvehicles.jsx";
 import { Kalender } from "../Pages/kalender.jsx";
 import { Termine } from "../Pages/termine.jsx";
 import { MyVehiclesButtons } from "../reusables/myvehicles.jsx";
@@ -31,10 +31,6 @@ export const router = createBrowserRouter([
                 element: <Register />
             },
             {
-                path: "addcars",
-                element: <AddCars />
-            },
-            {
                 path: "kalender", 
                 element: <Kalender />
             },
@@ -49,6 +45,10 @@ export const router = createBrowserRouter([
             {
                 path: "mycars", 
                 element: <YourCars />
+            },
+            {
+                path: "add",
+                element: <AddAllCars />
             },
         ],
     },

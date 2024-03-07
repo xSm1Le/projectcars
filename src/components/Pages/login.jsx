@@ -2,17 +2,24 @@ import React from 'react';
 import './login.css';
 import { useNavigate } from 'react-router';
 import './buttons.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useAuth } from '../global/checkStatus';
 
 export const Login = () => {
     const navigate = useNavigate();
+    const { setToken } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
     const [message, setMessage] = useState('');
+
+    useEffect(() => {} , [message]);
 
     const navigateToRegister = () => {
         navigate('/register');
+    };
+
+    const navigateToHome = () => {
+        navigate('/');
     };
 
     const handleSubmit = async (event) => {
@@ -27,10 +34,13 @@ export const Login = () => {
         });
 
         if (response.ok) {
+            const data = await response.json();
             setMessage('Erfolgreich eingeloggt.');
+            setToken(data.token);
+            navigateToHome();
         } else {
             const errorResponse = await response.json();
-            setMessage(errorResponse.message || 'Ein Fehler ist aufgetreten. Bitte überprüfe deine Logindaten.');
+            setMessage(errorResponse.message || 'Bitte überprüfe deine Eingaben. Passwort oder Benutzername ist Falsch!');
         }
     };
 
@@ -58,10 +68,7 @@ export const Login = () => {
                             <button className="button-13" type="submit">Einloggen</button>
                         </div>
                         <div>
-                            <button className="button-13" role="button" onClick={navigateToRegister}>Passwort Vergessen?</button>
-                        </div>
-                        <div>
-                            <button className="button-13" role="button" onClick={navigateToRegister}>Registrierung</button>
+                            <button className="button-13" role="button" onClick={navigateToRegister}>Registrieren</button>
                         </div>
                         <div>
                             <p>{message}</p>
