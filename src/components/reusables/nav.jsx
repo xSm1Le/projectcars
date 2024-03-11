@@ -32,13 +32,13 @@ export const Navbar = () => {
         <nav className="navbar">
             <ul>
                 <li>
-                    <img src="https://via.placeholder.com/150" alt="logo" onClick={navigateToHome} />
+                    <img src="./Logo1.png" alt="logo" onClick={navigateToHome} id='logo' />
                 </li>
-                <li className="PJName">
+                 <li className="PJName">
                     <h1>
                         Project Cars
                     </h1> 
-                </li>
+                </li> 
                 <li className="iconButtons">
                     <div>
                         {token && <img src="../benutzer.png" alt="Benutzer Icon" className="benutzericonNav" />}

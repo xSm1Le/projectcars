@@ -1,8 +1,12 @@
 .navbar {
+/*     background-image: url('./Logo.png');
+    background-position: center;
+    background-size: cover; */
     background-color: #161925;
     color: #cbf7ed;
     padding: 10px;
     width: 100vw;
+    border-radius: 0 0 20px 20px;
 }
 
 .PJName {
@@ -35,6 +39,11 @@
     background-color: #cbf7ed;
     padding: 8px;
     margin-right: 8px;
+}
+
+#logo {
+  height: 100px;
+  width: 100px;
 }
 
 /** Hamburger Menue */
