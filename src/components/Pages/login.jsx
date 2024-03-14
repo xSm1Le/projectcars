@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useAuth } from '../global/checkStatus';
 import './buttons.css';
 import './login.css';
@@ -13,17 +13,14 @@ export const Login = () => {
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false); // Zustand für Ladeindikator hinzugefügt
 
-    useEffect(() => {} , [message]);
+    
 
     const navigateToRegister = () => navigate('/register');
 
-    const navigateToHome = () => navigate('/');
-    
-
     const handleSubmit = async (event) => {
         event.preventDefault();
-        setIsLoading(true); // Aktiviere den Ladeindikator
-    
+        setIsLoading(true);
+
         try {
             const response = await fetch('https://carsdatabase.onrender.com/api/users/login', {
                 method: 'POST',
@@ -32,28 +29,27 @@ export const Login = () => {
                 },
                 body: JSON.stringify({ email, password }),
             });
-    
-            setIsLoading(false); // Deaktiviere den Ladeindikator
-    
+
+            const data = await response.json();
             if (response.ok) {
-                const data = await response.json();
-                setMessage('Erfolgreich eingeloggt.');
                 setToken(data.token);
-                navigateToHome(); // Verwenden Sie die navigateToHome Funktion hier
+                navigate('/'); // Navigiere zur Startseite
+                setMessage('Erfolgreich eingeloggt.');
             } else {
-                const errorResponse = await response.json();
-                setMessage(errorResponse.message || 'Bitte überprüfe deine Eingaben. Passwort oder Benutzername ist falsch!');
+                setMessage(data.message || 'Bitte überprüfe deine Eingaben. Passwort oder Benutzername ist falsch!');
             }
         } catch (error) {
-            setIsLoading(false); // Stelle sicher, dass der Ladeindikator auch bei Fehlern deaktiviert wird
             setMessage('Ein Fehler ist aufgetreten. Bitte versuche es später erneut.');
+        } finally {
+            setIsLoading(false);
         }
     };
 
 
+
     return (
-        <section className="loginsection">
-            <div className="Loginpage">
+        <section className="loginSection">
+            <div className="LoginPage">
                 <h1>Login</h1>
                 <form onSubmit={handleSubmit}>
                     <ul>
@@ -71,16 +67,17 @@ export const Login = () => {
                         </li>
                     </ul>
                     <div className="buttonsLogin">
-                        <div className="loginButton">
-                            <button className="button-13" type="submit">Einloggen</button>
-                        </div>
-                        <div>
-                            <button className="button-13" role="button" onClick={navigateToRegister}>Registrieren</button>
-                        </div>
-                        <div>
-                            <p>{message}</p>
-                        </div>
+                        <button className="button-13" type="submit" disabled={isLoading}>
+                            {isLoading ? 'Einloggen...' : 'Einloggen'}
+                        </button>
+                        <button className="button-13" type="button" onClick={navigateToRegister}>
+                            Registrieren
+                        </button>
                     </div>
+                    <div>
+                        <p>{message}</p>
+                    </div>
+                    
                 </form>
             </div>
         </section>
