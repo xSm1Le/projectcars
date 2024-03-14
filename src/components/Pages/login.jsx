@@ -1,9 +1,9 @@
-import React from 'react';
-import './login.css';
 import { useNavigate } from 'react-router';
-import './buttons.css';
 import { useState, useEffect } from 'react';
 import { useAuth } from '../global/checkStatus';
+import './buttons.css';
+import './login.css';
+
 
 export const Login = () => {
     const navigate = useNavigate();
@@ -11,38 +11,45 @@ export const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
+    const [isLoading, setIsLoading] = useState(false); // Zustand für Ladeindikator hinzugefügt
 
     useEffect(() => {} , [message]);
 
-    const navigateToRegister = () => {
-        navigate('/register');
-    };
+    const navigateToRegister = () => navigate('/register');
 
-    const navigateToHome = () => {
-        navigate('/');
-    };
+    const navigateToHome = () => navigate('/');
+    
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
-        const response = await fetch('https://carsdatabase.onrender.com/api/users/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email, password }),
-        });
-
-        if (response.ok) {
-            const data = await response.json();
-            setMessage('Erfolgreich eingeloggt.');
-            setToken(data.token);
-            navigateToHome();
-        } else {
-            const errorResponse = await response.json();
-            setMessage(errorResponse.message || 'Bitte überprüfe deine Eingaben. Passwort oder Benutzername ist Falsch!');
+        setIsLoading(true); // Aktiviere den Ladeindikator
+    
+        try {
+            const response = await fetch('https://carsdatabase.onrender.com/api/users/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+            });
+    
+            setIsLoading(false); // Deaktiviere den Ladeindikator
+    
+            if (response.ok) {
+                const data = await response.json();
+                setMessage('Erfolgreich eingeloggt.');
+                setToken(data.token);
+                navigateToHome(); // Verwenden Sie die navigateToHome Funktion hier
+            } else {
+                const errorResponse = await response.json();
+                setMessage(errorResponse.message || 'Bitte überprüfe deine Eingaben. Passwort oder Benutzername ist falsch!');
+            }
+        } catch (error) {
+            setIsLoading(false); // Stelle sicher, dass der Ladeindikator auch bei Fehlern deaktiviert wird
+            setMessage('Ein Fehler ist aufgetreten. Bitte versuche es später erneut.');
         }
     };
+
 
     return (
         <section className="loginsection">
