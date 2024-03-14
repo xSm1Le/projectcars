@@ -83,7 +83,7 @@ export const Register = () => {
                     <button className="button-13" type="submit">Registrieren</button>
                 </div>
                 <div>
-                    <button className="button-13" role="button" onClick={navigate('/login')}>Abbrechen</button>
+                    <button className="button-13" role="button" onClick={() => navigate('/login')}>Abbrechen</button>
                 </div>
                 </form>
                 <div>
