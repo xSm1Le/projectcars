@@ -1,3 +1,5 @@
+import '../buttons.css';
+
 export const TrailerForm = ({cartype}) => {
 
 
@@ -10,7 +12,7 @@ export const TrailerForm = ({cartype}) => {
             <input type="text" placeholder="Volumen / Größe" />
             <input type="text" placeholder="Letzter TÜV Termin" />
             <input type="text" placeholder="letzter Service" />
-            <button>Fahrzeug Speichern</button>
+            <button className="button-13">Hinzufügen</button>
         </form>
     )
 }

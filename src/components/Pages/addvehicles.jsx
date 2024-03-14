@@ -17,7 +17,6 @@ export const AddAllCars = () => {
             <div className="addCarsOverview">
                 <div className="topButtons">
                     <button className="button-13" role="button">Bild Hinzufügen</button>
-                    <button className="button-13" role="button">Fahrzeug Hinzufügen</button>
                 </div>
                     <MyVehiclesButtons setCartype={setCartype}/>
                     {cartype === "car" && <CarForm cartype={cartype}/>}

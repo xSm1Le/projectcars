@@ -1,3 +1,5 @@
+import '../buttons.css';
+
 export const CarForm = ({cartype}) => {
 
 
@@ -16,7 +18,7 @@ export const CarForm = ({cartype}) => {
             <input type="text" placeholder="Nächster Ölwechsel Nach Kilometern" />
             <input type="text" placeholder="Datum Nächster Ölwechsel" />
             <input type="text" placeholder="letzter Service" />
-            <button>Fahrzeug Speichern</button>
+            <button className="button-13">Hinzufügen</button>
         </form>
         
     )
