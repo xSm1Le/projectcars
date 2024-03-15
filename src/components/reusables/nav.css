@@ -43,11 +43,9 @@
 {
   display: block;
   position: relative;
-  
-  z-index: 1;
-  
   -webkit-user-select: none;
   user-select: none;
+  z-index: 1;
 }
  
  #menuToggle a
@@ -140,12 +138,12 @@
  
  #menu
  {
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     position: absolute;
-    width: 200px;
+    width: 12rem;
     margin: -3rem 0 0 -8rem;
     padding: 10px;
     padding-top: 3rem;
@@ -157,7 +155,7 @@
     /* to stop flickering of text in safari */
     
     transform-origin: 0% 0%;
-    transform: translate(120%, 0%);
+    transform: translate(-1520%, 0%);
     
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
   }

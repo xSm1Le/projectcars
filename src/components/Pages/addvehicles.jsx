@@ -1,33 +1,29 @@
+import { useEffect, useState } from "react";
 import "./addvehicles.css";
 import { MyVehiclesButtons } from "../reusables/myvehicles";
 import './buttons.css';
+import { CarForm } from "./Forms/carForm";
+import { TrailerForm } from "./Forms/trailerForm";
+
 
 export const AddAllCars = () => {
+    const [cartype, setCartype] = useState('');
+
+ useEffect(() => {}, [cartype]);
+
+
     return (
         <section>
             <div className="addCarsOverview">
                 <div className="topButtons">
                     <button className="button-13" role="button">Bild Hinzufügen</button>
-                    <button className="button-13" role="button">Fahrzeug Hinzufügen</button>
                 </div>
-                <div>
-                    <MyVehiclesButtons />
-                </div>
-                <div className="angaben">
-                    <input type="text" placeholder="Kennzeichen" />
-                    <input type="text" placeholder="Marke" />
-                    <input type="text" placeholder="Modell" />
-                    <input type="text" placeholder="Kraftstoff" />
-                    <input type="text" placeholder="Schadstoffklasse" />
-                    <input type="text" placeholder="Leistung kW" />
-                    <input type="text" placeholder="Leistung PS" />
-                    <input type="text" placeholder="Kilometerstand" />
-                    <input type="text" placeholder="Letzter TÜV Termin" />
-                    <input type="text" placeholder="Letzter Ölwechsel" />
-                    <input type="text" placeholder="Nächster Ölwechsel Nach Kilometern" />
-                    <input type="text" placeholder="Datum Nächster Ölwechsel" />
-                    <input type="text" placeholder="letzter Service" />
-                </div>
+                    <MyVehiclesButtons setCartype={setCartype}/>
+                    {cartype === "car" && <CarForm cartype={cartype}/>}
+                    {cartype === "bike" && <CarForm cartype={cartype}/>}
+                    {cartype === "tractor" && <CarForm cartype={cartype}/>}
+                    {cartype === "trailer" && <TrailerForm cartype={cartype}/>}
+                    {cartype === "camper" && <CarForm cartype={cartype}/>}
             </div>
         </section>
     )
