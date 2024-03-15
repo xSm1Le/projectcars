@@ -1,4 +1,3 @@
-import React from 'react';
 import { SlideShow } from '../reusables/swiper';
 import './landingpage.css';
 import { useNavigate } from 'react-router';
@@ -8,7 +7,7 @@ export const Landingpage = () => {
     const navigate = useNavigate();
 
     const navigateToAddcars = () => {
-        navigate('/addcars');
+        navigate('/add');
     };
 
     const navigateToKalender = () => {

@@ -22,26 +22,26 @@ export const SlideShow =  () => {
       >
         <SwiperSlide>
             <div className='slideDiv' >
-                <h3>BSP VW Passat</h3>
-                <img src="../pwa-maskable-192x192.png" alt="auto" /> 
+                <h3>BSP VW Passat B8</h3>
+                <img src="../beispielAutos/VW_Passat_B8_Limousine_2.0_TDI_Highline.JPG" alt="auto" /> 
             </div>
         </SwiperSlide>
         <SwiperSlide>
             <div className='slideDiv'>
                 <h3>BSP Audi Q7</h3>
-                <img src="../pwa-maskable-192x192.png" alt="auto" />
+                <img src="../beispielAutos/Audi_Q7.jpg" alt="auto" />
             </div>
         </SwiperSlide>
         <SwiperSlide>
             <div className='slideDiv'>
                 <h3>BSP BMW E90</h3>
-                <img src="../pwa-maskable-192x192.png" alt="auto" />
+                <img src="../beispielAutos/BMW_3er_E90.jpg" alt="auto" />
             </div>
         </SwiperSlide>
         <SwiperSlide>
             <div className='slideDiv'>
                 <h3>BSP Skoda superb</h3>
-                <img src="../pwa-maskable-192x192.png" alt="auto" />
+                <img src="../beispielAutos/1200px-2019_Skoda_Superb_SE_L_Executive_TDi_2.0_Front.jpg" alt="auto" />
             </div>
         </SwiperSlide>
       </Swiper>

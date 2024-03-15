@@ -39,10 +39,27 @@ export const Navbar = () => {
                         Project Cars
                     </h1> 
                 </li>
-                <li>
-                    {!token && <button className="button-13" role="button" onClick={navigateToLogin}>Einloggen</button>}
-                    {!token && <button className="button-13" role="button" onClick={navigateToRegister}>Registrieren</button>}
-                    {token && <button className="button-13" role="button" onClick={handleLogout}>Ausloggen</button>}
+                <li className="iconButtons">
+                    <div>
+                        {token && <img src="../benutzer.png" alt="Benutzer Icon" className="benutzericonNav" />}
+
+                    </div>
+                    <div>
+                        {!token && <button className="button-13" role="button" onClick={navigateToLogin}>Einloggen</button>}
+                        {!token && <button className="button-13" role="button" onClick={navigateToRegister}>Registrieren</button>}
+                        {token && <nav role="navigation">
+                            <div id="menuToggle">
+                            <input type="checkbox" />
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                                <ul id="menu">
+                                    <a href=""><li><button className="button-13" role="button" onClick={handleLogout}>Ausloggen</button></li></a>
+                                    <a href=""><li><button className="button-13" role="button">Einstellungen</button></li></a>
+                                </ul>
+                            </div>
+                        </nav>}
+                    </div>
                 </li>
             </ul>
         </nav>
