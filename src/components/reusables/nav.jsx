@@ -28,6 +28,10 @@ export const Navbar = () => {
         window.location.reload();
     };
 
+    const navigateToEinstellungen = () => {
+        navigate('/einstellungen');
+    };
+
     return (
         <nav className="navbar">
             <ul>
@@ -52,7 +56,7 @@ export const Navbar = () => {
                             <span></span>
                                 <ul id="menu">
                                     <a href=""><li><button className="button-13" role="button" onClick={handleLogout}>Ausloggen</button></li></a>
-                                    <a href=""><li><button className="button-13" role="button">Einstellungen</button></li></a>
+                                    <a href=""><li><button className="button-13" role="button" onClick={navigateToEinstellungen}>Einstellungen</button></li></a>
                                 </ul>
                             </div>
                         </nav>}
