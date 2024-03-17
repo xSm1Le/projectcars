@@ -1,4 +1,3 @@
-import React from 'react';
 import { SlideShow } from '../reusables/swiper';
 import './landingpage.css';
 import { useNavigate } from 'react-router';

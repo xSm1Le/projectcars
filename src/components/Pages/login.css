@@ -1,4 +1,4 @@
-.Loginpage {
+.LoginPage {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +10,7 @@
     border-radius: 4%;
 }
 
-.loginsection {
+.loginSection {
     display: flex;
     justify-content: center;
     align-items: center;
