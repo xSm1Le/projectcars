@@ -10,6 +10,7 @@ import { Kalender } from "../Pages/kalender.jsx";
 import { Termine } from "../Pages/termine.jsx";
 import { MyVehiclesButtons } from "../reusables/myvehicles.jsx";
 import { YourCars } from "../Pages/yourCars.jsx";
+import { Einstellungen } from "../Pages/einstellungen.jsx";
 
 
 
@@ -49,6 +50,10 @@ export const router = createBrowserRouter([
             {
                 path: "add",
                 element: <AddAllCars />
+            },
+            {
+                path: "einstellungen",
+                element: <Einstellungen />
             },
         ],
     },

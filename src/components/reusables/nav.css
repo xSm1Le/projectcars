@@ -1,175 +1,175 @@
 .navbar {
-    background-color: #161925;
-    color: #cbf7ed;
-    padding: 10px;
-    width: 100vw;
+  background-color: #161925;
+  color: #cbf7ed;
+  padding: 10px;
+  width: 100vw;
 }
 
 .PJName {
-    font-size: 1.2em;
-    font-weight: bold;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .navbar ul {
-    display: flex;
-    justify-content: space-between;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .navbar ul li img {
-    height: 50px;
-    width: auto;
+  height: 50px;
+  width: auto;
 }
 
 .iconButtons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 5%;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 5%;
 }
 
 .benutzericonNav {
-    border-radius: 50%;
-    background-color: #cbf7ed;
-    padding: 8px;
-    margin-right: 8px;
+  border-radius: 50%;
+  background-color: #cbf7ed;
+  padding: 8px;
+  margin-right: 8px;
 }
 
 /** Hamburger Menue */
 
 #menuToggle
 {
-  display: block;
-  position: relative;
-  -webkit-user-select: none;
-  user-select: none;
-  z-index: 1;
+display: block;
+position: relative;
+-webkit-user-select: none;
+user-select: none;
+z-index: 1;
 }
+
+#menuToggle a
+{
+ text-decoration: none;
+ color: #232323;
  
- #menuToggle a
- {
-   text-decoration: none;
-   color: #232323;
-   
-   transition: color 0.3s ease;
- }
+ transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+ color: #cbf7ed;
+}
+
+
+#menuToggle input
+{
+ display: block;
+ width: 40px;
+ height: 32px;
+ position: absolute;
+ top: -7px;
+ left: -5px;
  
- #menuToggle a:hover
- {
-   color: #cbf7ed;
- }
+ cursor: pointer;
  
+ opacity: 0; 
+ z-index: 2; 
  
- #menuToggle input
- {
-   display: block;
-   width: 40px;
-   height: 32px;
-   position: absolute;
-   top: -7px;
-   left: -5px;
-   
-   cursor: pointer;
-   
-   opacity: 0; 
-   z-index: 2; 
-   
-   -webkit-touch-callout: none;
- }
+ -webkit-touch-callout: none;
+}
+
+#menuToggle span
+{
+ display: block;
+ width: 33px;
+ height: 4px;
+ margin-bottom: 5px;
+ position: relative;
  
- #menuToggle span
- {
-   display: block;
-   width: 33px;
-   height: 4px;
-   margin-bottom: 5px;
-   position: relative;
-   
-   background: #cdcdcd;
-   border-radius: 3px;
-   
-   z-index: 1;
-   
-   transform-origin: 4px 0px;
-   
-   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-               opacity 0.55s ease;
- }
+ background: #cdcdcd;
+ border-radius: 3px;
  
- #menuToggle span:first-child
- {
-   transform-origin: 0% 0%;
- }
+ z-index: 1;
  
- #menuToggle span:nth-last-child(2)
- {
-   transform-origin: 0% 100%;
- }
+ transform-origin: 4px 0px;
  
- /* 
-  * alle teile des Hamburgermenüs werden umgewandelt in ein Kreuz
+ transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+             background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+             opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+ transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+ transform-origin: 0% 100%;
+}
+
+/* 
+* alle teile des Hamburgermenüs werden umgewandelt in ein Kreuz
 */
- #menuToggle input:checked ~ span
- {
-   opacity: 1;
-   transform: rotate(45deg) translate(-2px, -1px);
-   background: #232323;
- }
- 
- /*
-  * Den Mittleren strich verschwinden lassen
-  */
- #menuToggle input:checked ~ span:nth-last-child(3)
- {
-   opacity: 0;
-   transform: rotate(0deg) scale(0.2, 0.2);
- }
- 
- /*
-  * Der letzte dreht anders herum und bildet das Kreuz
-  */
- #menuToggle input:checked ~ span:nth-last-child(2)
- {
-   transform: rotate(-45deg) translate(0, -1px);
- }
- 
- #menu
- {
-    display: block;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: absolute;
-    width: 12rem;
-    margin: -3rem 0 0 -8rem;
-    padding: 10px;
-    padding-top: 3rem;
-    border-radius: 5%;
-    
-    background: #ededed;
-    list-style-type: none;
-    -webkit-font-smoothing: antialiased;
-    /* to stop flickering of text in safari */
-    
-    transform-origin: 0% 0%;
-    transform: translate(-1520%, 0%);
-    
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-  }
+#menuToggle input:checked ~ span
+{
+ opacity: 1;
+ transform: rotate(45deg) translate(-2px, -1px);
+ background: #232323;
+}
+
+/*
+* Den Mittleren strich verschwinden lassen
+*/
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+ opacity: 0;
+ transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+* Der letzte dreht anders herum und bildet das Kreuz
+*/
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+ transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu
+{
+  display: block;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  width: 12rem;
+  margin: -3rem 0 0 -8rem;
+  padding: 10px;
+  padding-top: 3rem;
+  border-radius: 5%;
   
-  #menu li
-  {
-    padding: 0px 0;
-    font-size: 22px;
-  }
- 
- /*
-  * damit sorg ich fürs einblenden des Menüs
-  */
- #menuToggle input:checked ~ ul
- {
-   transform: none;
- }
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-1520%, 0%);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 0px 0;
+  font-size: 22px;
+}
+
+/*
+* damit sorg ich fürs einblenden des Menüs
+*/
+#menuToggle input:checked ~ ul
+{
+ transform: none;
+}
