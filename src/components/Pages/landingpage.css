@@ -20,7 +20,7 @@
     align-items: center;
     height: 4rem;
     background-color: #161925;
-    border-radius: 5px;
+    border-radius: 0.5rem;
 }
 
 .LPButton {
@@ -30,4 +30,93 @@
     border: 1px solid #cbf7ed;
     border-radius: 10px;
     padding: 0.8rem;
+}
+
+@media screen and (max-width: 375px) {
+    .LPDates {
+    }
+
+    .yourCarsLP {
+
+    }
+
+    .LPButtons {
+
+    }
+
+    .LPButton {
+
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    .LPDates {
+
+    }
+
+    .yourCarsLP {
+
+    }
+
+    .LPButtons {
+
+    }
+
+    .LPButton {
+
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .LPDates {
+
+    }
+
+    .yourCarsLP {
+
+    }
+
+    .LPButtons {
+
+    }
+
+    .LPButton {
+
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .LPDates {
+
+    }
+
+    .yourCarsLP {
+
+    }
+
+    .LPButtons {
+
+    }
+
+    .LPButton {
+
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .LPDates {
+
+    }
+
+    .yourCarsLP {
+
+    }
+
+    .LPButtons {
+
+    }
+
+    .LPButton {
+
+    }
 }

@@ -35,9 +35,6 @@ export const Navbar = () => {
                     <img src="./Logo1.png" alt="logo" onClick={navigateToHome} id='logo' />
                 </li>
                  <li className="PJName">
-                    <h1>
-                        Project Cars
-                    </h1> 
                 </li> 
                 <li className="iconButtons">
                     <div>
