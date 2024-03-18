@@ -1,4 +1,3 @@
-import React from "react";
 import "./myvehicles.css";
 
 export const MyVehiclesButtons = ({setCartype}) => {
