@@ -1,12 +1,7 @@
 import React from "react";
 import "./myvehicles.css";
 
-<<<<<<< HEAD
-export const MyVehiclesButtons = () => {
-
-=======
 export const MyVehiclesButtons = ({setCartype}) => {
->>>>>>> development
     return (
         <section  className="vehicleSection">
                 <div className="iconsButtons">

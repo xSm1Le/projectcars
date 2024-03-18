@@ -23,7 +23,7 @@ export const SlideShow =  () => {
         <SwiperSlide>
             <div className='slideDiv' >
                 <h3>BSP VW Passat B8</h3>
-                <img src="../beispielAutos/VW_Passat_B8_Limousine_2.0_TDI_Highline.JPG" alt="auto" /> 
+{/*                  <img src="../beispielAutos/VW_Passat_B8_Limousine_2.0_TDI_Highline.JPG" alt="auto" />  */}
             </div>
         </SwiperSlide>
         <SwiperSlide>

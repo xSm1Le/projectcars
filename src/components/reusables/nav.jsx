@@ -38,8 +38,6 @@ export const Navbar = () => {
                 <li>
                     <img src="./Logo1.png" alt="logo" onClick={navigateToHome} id='logo' />
                 </li>
-                 <li className="PJName">
-                </li> 
                 <li className="iconButtons">
                     <div>
                         {token && <img src="../benutzer.png" alt="Benutzer Icon" className="benutzericonNav" />}
