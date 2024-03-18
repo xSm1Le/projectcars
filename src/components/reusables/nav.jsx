@@ -1,7 +1,6 @@
 import './nav.css';
 import '../Pages/buttons.css';
 import { useNavigate } from 'react-router';
-import React from 'react';
 import { useAuth } from '../global/checkStatus';
 
 
