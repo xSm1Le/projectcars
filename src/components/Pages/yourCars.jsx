@@ -1,12 +1,17 @@
+import { useEffect, useState } from "react";
 import { MyVehiclesButtons } from "../reusables/myvehicles.jsx";
 import './yourCars.css';
 
 
 export const YourCars = () => {
+    const [cartype, setCartype] = useState('');
+
+ useEffect(() => {}, [cartype]);
+
     return (
         <section className="yourCars">
             <div>
-                <MyVehiclesButtons />
+                <MyVehiclesButtons setCartype={setCartype}/>
             </div>
             <div className="allImages">
                 <div className="carImg">
