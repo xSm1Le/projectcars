@@ -112,8 +112,8 @@ export const AddAllCars = () => {
     </section>
   )
 }
-=======
-import { useEffect, useState } from "react";
+
+/* import { useEffect, useState } from "react";
 import "./addvehicles.css";
 import { MyVehiclesButtons } from "../reusables/myvehicles";
 import './buttons.css';
@@ -144,3 +144,4 @@ export const AddAllCars = () => {
     )
 }
 
+ */
