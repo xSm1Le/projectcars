@@ -3,12 +3,16 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../global/checkStatus'
 import { MyVehiclesButtons } from '../reusables/myvehicles'
+import { jwtDecode }  from 'jwt-decode'
 import './buttons.css'
 import './addvehicles.css'
 
 export const AddAllCars = () => {
   const navigate = useNavigate()
   const { token } = useAuth()
+  const decodedToken = jwtDecode(token);// Entschlüsseln des Tokens
+  const userId = decodedToken.userId; // Extrahieren der Benutzer-ID aus dem Token
+  const [fahrzeugart, setFahrzeugart] = useState('PKW'); // Standardwert als PKW
   const [kennzeichen, setKennzeichen] = useState('');
   const [marke, setMarke] = useState('');
   const [modell, setModell] = useState('');
@@ -21,17 +25,13 @@ export const AddAllCars = () => {
   const [nächsteTüvUntersuchung, setNächsteTüvUntersuchung] = useState('');
   const [nächsteoelwechsel, setNächsteoelwechsel] = useState('');
   const [nächsteoelwechselKm, setNächsteoelwechselKm] = useState('');
-  // Die Arrays bleiben leer, wenn keine Einträge vorhanden sind
-/*   const [kilometerstandHistory, setKilometerstandHistory] = useState([]);
-  const [tuevHistory, setTuevHistory] = useState([]);
-  const [oelwechselHistory, setOelwechselHistory] = useState([]);
-  const [serviceHistory, setServiceHistory] = useState([]); */
-
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const fahrzeugDaten = {
+      userId,
+      fahrzeugart,
       kennzeichen,
       marke,
       modell,
@@ -44,15 +44,13 @@ export const AddAllCars = () => {
       nächsteTüvUntersuchung: new Date(nächsteTüvUntersuchung),
       nächsteoelwechsel: new Date(nächsteoelwechsel),
       nächsteoelwechselKm: Number(nächsteoelwechselKm),
-    /*   kilometerstandHistory,
-      tuevHistory,
-      oelwechselHistory,
-      serviceHistory */
+    
     };
-
+ console.log(token)
     try {
-      const response = await fetch('https://carsdatabase.cyclic.app/api/cars/', {
+      const response = await fetch('https://carsdatabase.cyclic.app/api/cars/addCar', {
         method: 'POST',
+        /* credentials: 'omit', */
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`
@@ -64,9 +62,13 @@ export const AddAllCars = () => {
         alert('Fahrzeug erfolgreich hinzugefügt');
         navigate('/myvehicles')
       }
-      else { alert('Fehler beim Hinzufügen des Fahrzeugs') }
+      else {
+        const errorResponse = await response.json();
+        alert(errorResponse.message || 'Ein Fehler ist aufgetreten.');
+    }
 
     } catch (error) {
+      console.log (fahrzeugDaten)
       console.error(error)
     }
 
@@ -88,6 +90,17 @@ export const AddAllCars = () => {
           <MyVehiclesButtons />
         </div>
         <div className='angaben'>
+        <div>
+            <label>Fahrzeugart:</label>
+            <select value={fahrzeugart} onChange={(e) => setFahrzeugart(e.target.value)}>
+              <option value="PKW">PKW</option>
+              <option value="LKW">LKW</option>
+              <option value="Anhänger">Anhänger</option>
+              <option value="Motorrad">Motorrad</option>
+              <option value="Wohnmobil">Wohnmobil</option>
+              <option value="Sonstiges">Sonstiges</option>
+            </select>
+          </div>
         <input type='text' placeholder='Kennzeichen' value={kennzeichen} onChange={(e) => setKennzeichen(e.target.value)} />
         <input type='text' placeholder='Marke' value={marke} onChange={(e) => setMarke(e.target.value)} />
         <input type='text' placeholder='Modell' value={modell} onChange={(e) => setModell(e.target.value)} />
@@ -102,10 +115,7 @@ export const AddAllCars = () => {
         <input type='date' placeholder='Nächster Ölwechsel' value={nächsteoelwechsel} onChange={(e) => setNächsteoelwechsel(e.target.value)} />
        
         
-      {/*   <input type='text' placeholder='Kilometerstand Historie' value={kilometerstandHistory} onChange={(e) => setKilometerstandHistory(e.target.value)} />
-        <input type='text' placeholder='Tüv Historie' value={tuevHistory} onChange={(e) => setTuevHistory(e.target.value)} />
-        <input type='text' placeholder='Ölwechsel Historie' value={oelwechselHistory} onChange={(e) => setOelwechselHistory(e.target.value)} />
-        <input type='text' placeholder='Service Historie' value={serviceHistory} onChange={(e) => setServiceHistory(e.target.value)} /> */}
+     
         </div>
         </form>
       </div>
