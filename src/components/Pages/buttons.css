@@ -1,4 +1,3 @@
-/* CSS */
 .button-13 {
   background-color: #cbf7ed;
   border: 1px solid #d5d9d9;
@@ -8,10 +7,12 @@
   color: #0f1111;
   cursor: pointer;
   display: inline-block;
+  /* font wird bei mir nicht erkannt */
   font-family: "Amazon Ember",sans-serif;
   font-size: 13px;
   line-height: 29px;
   padding: 0 10px 0 11px;
+  /* ab hier wozu? */
   position: relative;
   text-align: center;
   text-decoration: none;

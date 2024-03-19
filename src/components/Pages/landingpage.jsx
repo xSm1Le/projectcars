@@ -26,21 +26,22 @@ export const Landingpage = () => {
                     <h2>Dein nächster Termin</h2>
                 </div>
             </section>
-            <section className='yourCarsLP'>
-                <h2>Deine Fahrzeuge</h2>
+            {/* <h2>Deine Fahrzeuge</h2> */}
+            <div className='yourCarsLP'>
+            <h2>Deine Fahrzeuge</h2>
                 <SlideShow />
-                <ul className='LPButtons'>
-                    <li>
+            </div>
+            <ul className='LPButtons'>
+                <li>
                     <button className="button-13" role="button" onClick={navigateToMyCars}>Fahrzeuge</button>
-                    </li>
-                    <li>
+                </li>
+                <li>
                     <button className="button-13" role="button" onClick={navigateToAddcars}>Hinzufügen</button>
-                    </li>
-                    <li>
+                </li>
+                <li>
                     <button className="button-13" role="button" onClick={navigateToKalender}>Termine</button>
-                    </li>
-                </ul>
-            </section>
+                </li>
+            </ul>
         </section>
     )
 }

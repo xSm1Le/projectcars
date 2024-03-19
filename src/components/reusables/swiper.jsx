@@ -26,7 +26,7 @@ export const SlideShow =  () => {
             <div className='slideDiv' >
                 {!token && <div>
                 <h3>BSP VW Passat B8</h3>
-                <img src="../beispielAutos/VW_Passat_B8_Limousine_2.0_TDI_Highline.JPG" alt="auto" /> 
+{/*                  <img src="../beispielAutos/VW_Passat_B8_Limousine_2.0_TDI_Highline.JPG" alt="auto" />  */}
                 </div>}
             </div>
         </SwiperSlide>

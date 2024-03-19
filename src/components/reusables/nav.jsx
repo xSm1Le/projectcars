@@ -35,12 +35,7 @@ export const Navbar = () => {
         <nav className="navbar">
             <ul>
                 <li>
-                    <img src="https://via.placeholder.com/150" alt="logo" onClick={navigateToHome} />
-                </li>
-                <li className="PJName">
-                    <h1>
-                        Project Cars
-                    </h1> 
+                    <img src="./Logo1.png" alt="logo" onClick={navigateToHome} id='logo' />
                 </li>
                 <li className="iconButtons">
                     <div>
