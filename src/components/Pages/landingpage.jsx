@@ -1,22 +1,23 @@
 import { SlideShow } from '../reusables/swiper';
 import './landingpage.css';
 import { useNavigate } from 'react-router';
+import { useAuth } from '../global/checkStatus';
 
 
 export const Landingpage = () => {
     const navigate = useNavigate();
+    const {isAuth} = useAuth(); // Token aus dem globalen Zustand
 
-    const navigateToAddcars = () => {
-        navigate('/add');
-    };
 
-    const navigateToKalender = () => {
-        navigate('/kalender');
-    };
 
-    const navigateToMyCars = () => {
-        navigate('/mycars');
-    };
+   console.log(isAuth);
+    const navigateIsAuth = (path) => { 
+        if (isAuth) {
+            navigate(path);
+        } else {
+            navigate('/login');
+        }
+    }
 
     return (
         <section className="mainLanding">
@@ -33,13 +34,13 @@ export const Landingpage = () => {
             </div>
             <ul className='LPButtons'>
                 <li>
-                    <button className="button-13" role="button" onClick={navigateToMyCars}>Fahrzeuge</button>
+                    <button className="button-13" role="button" onClick={() => navigateIsAuth('/mycars')}>Fahrzeuge</button>
                 </li>
                 <li>
-                    <button className="button-13" role="button" onClick={navigateToAddcars}>Hinzufügen</button>
+                    <button className="button-13" role="button" onClick={() => navigateIsAuth('/add')}>Hinzufügen</button>
                 </li>
                 <li>
-                    <button className="button-13" role="button" onClick={navigateToKalender}>Termine</button>
+                    <button className="button-13" role="button" onClick={() => navigateIsAuth('/kalender')}>Kalender</button>
                 </li>
             </ul>
         </section>
