@@ -9,8 +9,6 @@ export const Landingpage = () => {
     const {isAuth} = useAuth(); // Token aus dem globalen Zustand
 
 
-
-   console.log(isAuth);
     const navigateIsAuth = (path) => { 
         if (isAuth) {
             navigate(path);
