@@ -2,22 +2,33 @@ import { SlideShow } from '../reusables/swiper';
 import './landingpage.css';
 import { useNavigate } from 'react-router';
 import { useAuth } from '../global/checkStatus';
+import { jwtDecode } from 'jwt-decode';
 
 
 export const Landingpage = () => {
     const navigate = useNavigate();
-    const {isAuth} = useAuth(); // Token aus dem globalen Zustand
+    const {isAuth} = useAuth(); // if token is available, isAuth is true
+    const { token } = useAuth(); // token value is stored in token
+    const decodedToken = jwtDecode(token); // Entschlüsseln des Tokens
+    const userId = decodedToken.userId; // Extrahieren der Benutzer-ID aus dem Token
 
 
-
-   console.log(isAuth);
+// navigateIsAuth 
+   console.log(token);
     const navigateIsAuth = (path) => { 
         if (isAuth) {
-            navigate(path);
+           
+            navigate(path); // Navigiere zur angegebenen Route, wenn der Benutzer authentifiziert ist
         } else {
-            navigate('/login');
+            navigate('/login'); // Navigiere zur Login-Seite, wenn der Benutzer nicht authentifiziert ist
         }
     }
+
+    //------------------------------------------------------------------
+
+
+    
+   
 
     return (
         <section className="mainLanding">
