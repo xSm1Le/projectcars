@@ -15,7 +15,7 @@ export const Landingpage = () => {
     useEffect(() => {
         if (token) {
             try {
-                const decodedToken = jwtDecode(token); 
+                const decodedToken = jwtDecode(token);
                 const userId = decodedToken.userId;
     
                 const fetchData = async () => {
@@ -25,13 +25,12 @@ export const Landingpage = () => {
                         }
                     });
                     if (response.ok) {
-                        const data = await response.json();
-                        if (Array.isArray(data.cars)) { // Zugriff auf das 'cars'-Array im Antwortobjekt
-                            const sortedData = data.cars.sort((a, b) => new Date(a.nächsteTüvUntersuchung) - new Date(b.nächsteTüvUntersuchung));
-                            setCarWithNextAppointment(sortedData[0]); // Setzen des Autos mit dem nächsten Termin
-                        } else {
-                            console.error('Erwartetes Array unter dem Schlüssel "cars", erhalten:', typeof data.cars);
-                        }
+                        const { cars } = await response.json();
+                        const currentDate = new Date();
+                        // Filtert Autos mit zukünftigen Terminen und sortiert sie
+                        const futureCars = cars.filter(car => new Date(car.nächsteTüvUntersuchung) > currentDate);
+                        const sortedFutureCars = futureCars.sort((a, b) => new Date(a.nächsteTüvUntersuchung) - new Date(b.nächsteTüvUntersuchung));
+                        setCarWithNextAppointment(sortedFutureCars[0]); // Setzt das Auto mit dem nächstgelegenen zukünftigen Termin
                     }
                 };
                 fetchData();
