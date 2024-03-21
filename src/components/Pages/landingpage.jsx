@@ -3,18 +3,46 @@ import './landingpage.css';
 import { useNavigate } from 'react-router';
 import { useAuth } from '../global/checkStatus';
 import { jwtDecode } from 'jwt-decode';
-
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 export const Landingpage = () => {
     const navigate = useNavigate();
     const {isAuth} = useAuth(); // if token is available, isAuth is true
     const { token } = useAuth(); // token value is stored in token
-    const decodedToken = jwtDecode(token); // Entschlüsseln des Tokens
-    const userId = decodedToken.userId; // Extrahieren der Benutzer-ID aus dem Token
+    const [carWithNextAppointment, setCarWithNextAppointment] = useState(null);
 
+    useEffect(() => {
+        if (token) {
+            try {
+                const decodedToken = jwtDecode(token); 
+                const userId = decodedToken.userId;
+    
+                const fetchData = async () => {
+                    const response = await fetch(`https://carsdatabase.cyclic.app/api/cars/user/${userId}`, {
+                        headers: {
+                            Authorization: `Bearer ${token}`
+                        }
+                    });
+                    if (response.ok) {
+                        const data = await response.json();
+                        if (Array.isArray(data.cars)) { // Zugriff auf das 'cars'-Array im Antwortobjekt
+                            const sortedData = data.cars.sort((a, b) => new Date(a.nächsteTüvUntersuchung) - new Date(b.nächsteTüvUntersuchung));
+                            setCarWithNextAppointment(sortedData[0]); // Setzen des Autos mit dem nächsten Termin
+                        } else {
+                            console.error('Erwartetes Array unter dem Schlüssel "cars", erhalten:', typeof data.cars);
+                        }
+                    }
+                };
+                fetchData();
+            } catch (error) {
+                console.error('Fehler bei der Decodierung des Tokens oder beim Abrufen der Daten:', error);
+            }
+        }
+    }, [token]);
+    
+    //------------------------------------------------------------------    
 
-// navigateIsAuth 
-   console.log(token);
     const navigateIsAuth = (path) => { 
         if (isAuth) {
            
@@ -24,11 +52,12 @@ export const Landingpage = () => {
         }
     }
 
+
+
+
+
     //------------------------------------------------------------------
 
-
-    
-   
 
     return (
         <section className="mainLanding">
@@ -36,6 +65,15 @@ export const Landingpage = () => {
                 <div className='LPDates'>
                     <img src="../favicon-32x32.png" alt="beispiel auto" />
                     <h2>Dein nächster Termin</h2>
+                    {carWithNextAppointment ? (
+                        <div>
+                            <p>{carWithNextAppointment.marke} {carWithNextAppointment.modell}</p>
+                            <p>{carWithNextAppointment.kennzeichen}</p>
+                            <p>{new Date(carWithNextAppointment.nächsteTüvUntersuchung).toLocaleDateString()}</p>
+                        </div>
+                    ) : (
+                        <p>Kein Termin gefunden</p>
+                    )}
                 </div>
             </section>
             {/* <h2>Deine Fahrzeuge</h2> */}
