@@ -12,7 +12,7 @@ export const AddAllCars = () => {
   const { token } = useAuth()
   const decodedToken = jwtDecode(token);// Entschlüsseln des Tokens
   const userId = decodedToken.userId; // Extrahieren der Benutzer-ID aus dem Token
-  const [fahrzeugart, setFahrzeugart] = useState('PKW'); // Standardwert als PKW
+  const [fahrzeugart, setFahrzeugart] = useState(''); // Standardwert als PKW
   const [kennzeichen, setKennzeichen] = useState('');
   const [marke, setMarke] = useState('');
   const [modell, setModell] = useState('');
@@ -93,12 +93,11 @@ export const AddAllCars = () => {
         <div>
             <label>Fahrzeugart:</label>
             <select value={fahrzeugart} onChange={(e) => setFahrzeugart(e.target.value)}>
-              <option value="PKW">PKW</option>
-              <option value="LKW">LKW</option>
-              <option value="Anhänger">Anhänger</option>
-              <option value="Motorrad">Motorrad</option>
-              <option value="Wohnmobil">Wohnmobil</option>
-              <option value="Sonstiges">Sonstiges</option>
+              <option value="car">PKW</option>
+              <option value="bike">Motorrad</option>
+              <option value="tractor">Traktor</option>
+              <option value="trailer">LKW</option>
+              <option value="camper">Wohnmobil</option>
             </select>
           </div>
         <input type='text' placeholder='Kennzeichen' value={kennzeichen} onChange={(e) => setKennzeichen(e.target.value)} />
@@ -123,35 +122,3 @@ export const AddAllCars = () => {
   )
 }
 
-/* import { useEffect, useState } from "react";
-import "./addvehicles.css";
-import { MyVehiclesButtons } from "../reusables/myvehicles";
-import './buttons.css';
-import { CarForm } from "./Forms/carForm";
-import { TrailerForm } from "./Forms/trailerForm";
-
-
-export const AddAllCars = () => {
-    const [cartype, setCartype] = useState('');
-
- useEffect(() => {}, [cartype]);
-
-
-    return (
-        <section>
-            <div className="addCarsOverview">
-                <div className="topButtons">
-                    <button className="button-13" role="button">Bild Hinzufügen</button>
-                </div>
-                    <MyVehiclesButtons setCartype={setCartype}/>
-                    {cartype === "car" && <CarForm cartype={cartype}/>}
-                    {cartype === "bike" && <CarForm cartype={cartype}/>}
-                    {cartype === "tractor" && <CarForm cartype={cartype}/>}
-                    {cartype === "trailer" && <TrailerForm cartype={cartype}/>}
-                    {cartype === "camper" && <CarForm cartype={cartype}/>}
-            </div>
-        </section>
-    )
-}
-
- */
