@@ -96,7 +96,7 @@ export const AddAllCars = () => {
               <option value="car">PKW</option>
               <option value="bike">Motorrad</option>
               <option value="tractor">Traktor</option>
-              <option value="trailer">LKW</option>
+              <option value="trailer">Anhänger</option>
               <option value="camper">Wohnmobil</option>
             </select>
           </div>
