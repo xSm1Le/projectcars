@@ -111,8 +111,8 @@ export const AddAllCars = () => {
         <input type='number' placeholder='Leistung in PS' value={leistungPS} onChange={(e) => setLeistungPS(e.target.value)} />
         <input type='number' placeholder='Kilometerstand' value={kilometerstand} onChange={(e) => setKilometerstand(e.target.value)} />
         <input type='number' placeholder='Nächster Ölwechsel bei Kilometerstand' value={nächsteoelwechselKm} onChange={(e) => setNächsteoelwechselKm(e.target.value)} />
-        <input type='date' placeholder='Nächste Tüv Untersuchung' value={nächsteTüvUntersuchung} onChange={(e) => setNächsteTüvUntersuchung(e.target.value)} />
-        <input type='date' placeholder='Nächster Ölwechsel' value={nächsteoelwechsel} onChange={(e) => setNächsteoelwechsel(e.target.value)} />
+        <p>Neuer TÜV Termin</p><input type='date' placeholder='Nächste Tüv Untersuchung' value={nächsteTüvUntersuchung} onChange={(e) => setNächsteTüvUntersuchung(e.target.value)} />
+        <p>Nächster Ölwechsel</p><input type='date' placeholder='Nächster Ölwechsel' value={nächsteoelwechsel} onChange={(e) => setNächsteoelwechsel(e.target.value)} />
        
         
      
