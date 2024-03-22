@@ -42,8 +42,9 @@ export const YourCars = () => {
             };
 
             fetchCars();
+            console.log(cars);
         }
-    }, [token, cartype]); // Abhängigkeiten für den useEffect Hook
+    }, [token, cartype]);
 
     return (
         <section className="yourCars">
