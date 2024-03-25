@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router';
 import { useState } from 'react';
 import { useAuth } from '../global/checkStatus';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import './buttons.css';
 import './login.css';
 
@@ -10,6 +11,7 @@ export const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [isLoading, setIsLoading] = useState(false); // Zustand für Ladeindikator hinzugefügt
 
     const navigateToRegister = () => navigate('/register');
@@ -42,6 +44,10 @@ export const Login = () => {
         }
     };
 
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
+
     return (
         <section className="loginSection">
             <div className="LoginPage">
@@ -60,7 +66,12 @@ export const Login = () => {
                                 required />
                         </li>
                         <li>
-                            <input type="password" minLength="8"
+                            <label htmlFor="pw">
+                                <button type="button" onClick={togglePasswordVisibility}>
+                                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                </button>
+                            </label>
+                            <input type={showPassword ? 'text' : 'password'} name='pw' minLength="8"
                                 value={password} placeholder="Passwort"
                                 onChange={(e) => setPassword(e.target.value)}
                                 required />
@@ -77,7 +88,6 @@ export const Login = () => {
                     <div>
                         <p>{message}</p>
                     </div>
-                    
                 </form>
             </div>
         </section>
