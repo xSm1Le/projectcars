@@ -4,7 +4,6 @@ import { useAuth } from '../global/checkStatus';
 import './buttons.css';
 import './login.css';
 
-
 export const Login = () => {
     const navigate = useNavigate();
     const { setToken } = useAuth();
@@ -12,8 +11,6 @@ export const Login = () => {
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false); // Zustand für Ladeindikator hinzugefügt
-
-    
 
     const navigateToRegister = () => navigate('/register');
 
@@ -45,13 +42,16 @@ export const Login = () => {
         }
     };
 
-
-
     return (
         <section className="loginSection">
             <div className="LoginPage">
                 <h1>Login</h1>
                 <form onSubmit={handleSubmit}>
+                {isLoading ? 
+                    <div className='loading'>
+                        <img src={'./loading.gif'}className="loading-icon" alt="loading" />
+                    </div>  
+                    : 
                     <ul>
                         <li>
                             <input type="email" placeholder="e-Mail Adresse"
@@ -65,10 +65,10 @@ export const Login = () => {
                                 onChange={(e) => setPassword(e.target.value)}
                                 required />
                         </li>
-                    </ul>
+                    </ul>}
                     <div className="buttonsLogin">
                         <button className="button-13" type="submit" disabled={isLoading}>
-                            {isLoading ? 'Einloggen...' : 'Einloggen'}
+                            {isLoading ? 'Einloggen ...' : 'Einloggen'}
                         </button>
                         <button className="button-13" type="button" onClick={navigateToRegister}>
                             Registrieren
