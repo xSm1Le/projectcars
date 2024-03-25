@@ -13,7 +13,7 @@ export const AddAllCars = () => {
   const { token } = useAuth()
   const decodedToken = jwtDecode(token);// Entschlüsseln des Tokens
   const userId = decodedToken.userId; // Extrahieren der Benutzer-ID aus dem Token
-  const [fahrzeugart, setFahrzeugart] = useState(''); // Standardwert als PKW
+  const [fahrzeugart, setFahrzeugart] = useState('car'); // Standardwert als PKW
   const [kennzeichen, setKennzeichen] = useState('');
   const [marke, setMarke] = useState('');
   const [modell, setModell] = useState('');
