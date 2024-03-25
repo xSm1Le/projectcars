@@ -43,9 +43,9 @@ export const YourCars = () => {
             };
 
             fetchCars();
-            console.log(cars);
+            
         }
-    }, [token, cartype]);
+    }, [token, cartype, cars]);
 
     return (
         <section className="yourCars">
