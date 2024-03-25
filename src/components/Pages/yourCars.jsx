@@ -3,6 +3,7 @@ import { useAuth } from "../global/checkStatus"; // Pfad anpassen
 import { MyVehiclesButtons } from "../reusables/myvehicles.jsx";
 import { jwtDecode } from 'jwt-decode'; // Importieren von jwt-decode
 import './yourCars.css';
+import config from '../global/configAPI';
 
 export const YourCars = () => {
     const { token } = useAuth(); // Token aus Authentifizierungskontext
@@ -16,7 +17,7 @@ export const YourCars = () => {
 
             const fetchCars = async () => {
                 try {
-                    const response = await fetch(`https://carsdatabase.cyclic.app/api/cars/user/${userId}`, {
+                    const response = await fetch(`${config.API_BASE_URL}/api/cars/user/${userId}`, {
                         method: 'GET',
                         headers: {
                             'Authorization': `Bearer ${token}`
@@ -42,9 +43,9 @@ export const YourCars = () => {
             };
 
             fetchCars();
-            console.log(cars);
+            
         }
-    }, [token, cartype]);
+    }, [token, cartype, cars]);
 
     return (
         <section className="yourCars">

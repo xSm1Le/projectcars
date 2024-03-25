@@ -6,6 +6,7 @@ import { MyVehiclesButtons } from '../reusables/myvehicles'
 import { jwtDecode }  from 'jwt-decode'
 import './buttons.css'
 import './addvehicles.css'
+import  config  from '../global/configAPI'
 
 export const AddAllCars = () => {
   const navigate = useNavigate()
@@ -48,7 +49,7 @@ export const AddAllCars = () => {
     };
  console.log(token)
     try {
-      const response = await fetch('https://carsdatabase.cyclic.app/api/cars/addCar', {
+      const response = await fetch(`${config.API_BASE_URL}/api/cars/addCar`, {
         method: 'POST',
         /* credentials: 'omit', */
         headers: {

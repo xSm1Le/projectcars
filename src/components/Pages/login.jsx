@@ -3,26 +3,27 @@ import { useState } from 'react';
 import { useAuth } from '../global/checkStatus';
 import './buttons.css';
 import './login.css';
+import config from '../global/configAPI';
 
 
 export const Login = () => {
     const navigate = useNavigate();
     const { setToken } = useAuth();
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [password, setPassword] = useState(''); 
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false); // Zustand für Ladeindikator hinzugefügt
 
     
 
-    const navigateToRegister = () => navigate('/register');
+    const navigateToRegister = () => navigate('/register'); 
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         setIsLoading(true);
 
         try {
-            const response = await fetch('https://carsdatabase.cyclic.app/api/users/login', {
+            const response = await fetch(`${config.API_BASE_URL}/api/users/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

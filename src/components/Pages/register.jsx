@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router';
 import { useState } from 'react';
 import './register.css';
 import './buttons.css';
+import config from '../global/configAPI';
 
 
 export const Register = () => {
@@ -35,7 +36,7 @@ export const Register = () => {
             return; // Stoppt die Verarbeitung, wenn die Validierung fehlschlägt
         }
 
-        const response = await fetch('https://carsdatabase.cyclic.app/api/users/register', {
+        const response = await fetch(`${config.API_BASE_URL}/api/users/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
