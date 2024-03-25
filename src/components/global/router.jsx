@@ -55,6 +55,10 @@ export const router = createBrowserRouter([
                 path: "einstellungen",
                 element: <Einstellungen />
             },
+            {
+                path: "carInformation",
+                element: <carForm />
+            },
         ],
     },
 ]);
