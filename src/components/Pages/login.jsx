@@ -1,55 +1,42 @@
-import { useNavigate } from 'react-router';
-import { useState } from 'react';
-import { useAuth } from '../global/checkStatus';
-import './buttons.css';
+import React from 'react';
 import './login.css';
-
+import { useNavigate } from 'react-router';
+import './buttons.css';
+import { useState } from 'react';
 
 export const Login = () => {
     const navigate = useNavigate();
-    const { setToken } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
     const [message, setMessage] = useState('');
-    const [isLoading, setIsLoading] = useState(false); // Zustand für Ladeindikator hinzugefügt
 
-    
-
-    const navigateToRegister = () => navigate('/register');
+    const navigateToRegister = () => {
+        navigate('/register');
+    };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        setIsLoading(true);
 
-        try {
-            const response = await fetch('https://carsdatabase.cyclic.app/api/users/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password }),
-            });
+        const response = await fetch('https://carsdatabase.onrender.com/api/users/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+        });
 
-            const data = await response.json();
-            if (response.ok) {
-                setToken(data.token);
-                navigate('/'); // Navigiere zur Startseite
-                setMessage('Erfolgreich eingeloggt.');
-            } else {
-                setMessage(data.message || 'Bitte überprüfe deine Eingaben. Passwort oder Benutzername ist falsch!');
-            }
-        } catch (error) {
-            setMessage('Ein Fehler ist aufgetreten. Bitte versuche es später erneut.');
-        } finally {
-            setIsLoading(false);
+        if (response.ok) {
+            setMessage('Erfolgreich eingeloggt.');
+        } else {
+            const errorResponse = await response.json();
+            setMessage(errorResponse.message || 'Ein Fehler ist aufgetreten. Bitte überprüfe deine Logindaten.');
         }
     };
 
-
-
     return (
-        <section className="loginSection">
-            <div className="LoginPage">
+        <section className="loginsection">
+            <div className="Loginpage">
                 <h1>Login</h1>
                 <form onSubmit={handleSubmit}>
                     <ul>
@@ -67,17 +54,19 @@ export const Login = () => {
                         </li>
                     </ul>
                     <div className="buttonsLogin">
-                        <button className="button-13" type="submit" disabled={isLoading}>
-                            {isLoading ? 'Einloggen...' : 'Einloggen'}
-                        </button>
-                        <button className="button-13" type="button" onClick={navigateToRegister}>
-                            Registrieren
-                        </button>
+                        <div className="loginButton">
+                            <button className="button-13" type="submit">Einloggen</button>
+                        </div>
+                        <div>
+                            <button className="button-13" role="button" onClick={navigateToRegister}>Passwort Vergessen?</button>
+                        </div>
+                        <div>
+                            <button className="button-13" role="button" onClick={navigateToRegister}>Registrierung</button>
+                        </div>
+                        <div>
+                            <p>{message}</p>
+                        </div>
                     </div>
-                    <div>
-                        <p>{message}</p>
-                    </div>
-                    
                 </form>
             </div>
         </section>
