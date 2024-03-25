@@ -5,6 +5,7 @@ import { useAuth } from '../global/checkStatus';
 import { jwtDecode } from 'jwt-decode';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import config from '../global/configAPI'; // Importiert die backend API-URL
 
 export const Landingpage = () => {
     const navigate = useNavigate();
@@ -19,7 +20,7 @@ export const Landingpage = () => {
                 const userId = decodedToken.userId;
     
                 const fetchData = async () => {
-                    const response = await fetch(`https://carsdatabase.cyclic.app/api/cars/user/${userId}`, {
+                    const response = await fetch(`${config.API_BASE_URL}/api/cars/user/${userId}`, {
                         headers: {
                             Authorization: `Bearer ${token}`
                         }
