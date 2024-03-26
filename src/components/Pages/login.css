@@ -6,7 +6,7 @@
     height: 70vh;
     width: 70vw;
     background-color: #ecededb7;
-    border: #00000021;
+    border: 5px solid #00000021;
     border-radius: 4%;
 }
 
@@ -35,4 +35,58 @@ ul {
 ul li {
     margin: 2% 2% 2% 2%;
     padding: 2% 2% 2% 2%;
+}
+
+@keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+}
+  
+@keyframes slideOut {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+}
+
+.loading {
+    margin-top: 3.5rem;
+    height: 50%;
+}
+  
+.loading-icon {
+    width: 250px;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translate(-50%);
+    animation: slideIn 0.5s forwards;
+}
+  
+.logged-in .loading-icon {
+    animation: slideOut 1s forwards;
+}
+
+.passwordInput {
+    position: relative;
+}
+
+.passwordInput input[type="password"] {
+    padding-right: 35px; /* Platz für den Button */
+}
+
+.passwordInput button {
+    position: absolute;
+    top: 50%; /* Zentrieren vertikal */
+    right: 10px; /* Abstand vom rechten Rand */
+    transform: translateY(-50%); /* Zentrieren vertikal */
+    background: none;
+    border: none;
+    cursor: pointer;
 }

@@ -7,11 +7,12 @@
 }
   
 .swiper-slide {
-    background-image: url('/beispielAutos/Audi_Q7.jpg');
+/*     background-image: url('/beispielAutos/Audi_Q7.jpg');
     background-position: center;
     background-size: contain;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     /* achtung hintergrund überlappt */
+    width: 100%;
 }
   
 .swiper-slide img {
@@ -23,4 +24,8 @@
 .slideDiv{
     text-align: center;
     margin-top: 1rem;
+}
+
+.autoname {
+    background: radial-gradient(circle, rgba(64,110,142,1) -30%, rgba(203,247,237,1) 300%);
 }

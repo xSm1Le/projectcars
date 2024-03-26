@@ -16,7 +16,7 @@
 
 .LPButtons {
     display: flex;
-     justify-content: space-around; 
+    justify-content: space-around; 
     align-items: center;
     height: 5rem;
     width: 100vw;
@@ -24,22 +24,4 @@
     border-radius: 0.5rem;
     position: fixed;
     bottom: 0;
-}
-
-@media screen and (min-width: 576px) and (max-width: 768px) {
-    .LPDates {
-
-    }
-
-    .yourCarsLP {
-
-    }
-
-    .LPButtons {
-
-    }
-
-    .LPButton {
-
-    }
 }
