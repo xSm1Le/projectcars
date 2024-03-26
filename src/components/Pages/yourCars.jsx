@@ -4,7 +4,8 @@ import { jwtDecode } from 'jwt-decode'; // Korrekter Import
 import './yourCars.css';
 import config from '../global/configAPI';
 import { MyVehiclesButtons } from "../reusables/myvehicles";
-
+import { IoTrash } from "react-icons/io5";
+import { FaGear } from "react-icons/fa6";
 
 
 export const YourCars = () => {
@@ -106,8 +107,8 @@ export const YourCars = () => {
                                 <p>Nächster Ölwechsel: {new Date(car.nächsteoelwechsel).toLocaleDateString()}</p>
                                 <p>Nächster Ölwechsel bei: {car.nächsteoelwechselKm} km</p>
                                 <div className="buttonstyle">
-                                    <button className="button-13" onClick={() => handleEditClick(car._id)}>Bearbeiten</button>
-                                    <button className="button-13" onClick={() => handleDelete(car._id)}>Löschen</button>
+                                    <button className="button-13" onClick={() => handleEditClick(car._id)}><FaGear className="zahnrad"/></button>
+                                    <button className="button-13" onClick={() => handleDelete(car._id)}><IoTrash className="trash"/></button>
                                 </div>
                             </>
                         )}

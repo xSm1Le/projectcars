@@ -57,9 +57,10 @@ export const Kalender = () => {
     };
 
     return (
-        <section>
-            <h2>Kalender</h2>
+        <section className="yourDates">
+            <h2 className="datesh2">Kalender</h2>
             <Calendar onChange={setValue} value={value} tileClassName={tileClassName} />
+{/*             <p>du hast keinen Termin am <b>{moment(dateState).format('Do MM  YY')}</b></p> */}
         </section>
     );
 };

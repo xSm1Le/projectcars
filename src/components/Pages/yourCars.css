@@ -12,7 +12,6 @@
     align-items: center;
     flex-direction: column;
     margin-top: 20px;
-    
     width: 100vw;
     height: 100vh;
 }
@@ -25,7 +24,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 2px 2px 2px 2px;
+    margin: 2px;
     border: 2px solid black;
 }
 
@@ -34,4 +33,10 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;  
+}
+
+.trash, .zahnrad {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding-top: 0.5rem;
 }

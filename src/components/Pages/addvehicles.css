@@ -16,8 +16,20 @@
     border-radius: 5%;
 }
 
-.angaben input {
+.selectDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.angaben input, .select {
     margin: 2% 0;
+    padding: 0.3rem;
+    border: 1px solid grey;
+    border-radius: 0.5rem;
+}
+
+.carForm {
+    margin-bottom: 2.5rem;
 }
 
 button {
@@ -28,4 +40,9 @@ button {
     display: flex;
     justify-content: space-between;
     margin: 2% 0;
+    width: 100vw;
+    background-color: #161925;
+    border-radius: 1rem;
+    position: fixed;
+    bottom: 0;
 }
