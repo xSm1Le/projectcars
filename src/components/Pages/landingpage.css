@@ -25,3 +25,8 @@
     position: fixed;
     bottom: 0;
 }
+
+.dateInfo {
+    font-weight: bold;
+    text-align: center;
+}

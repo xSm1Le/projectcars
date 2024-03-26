@@ -64,19 +64,18 @@ export const Landingpage = () => {
             <section className='yourDateLP' >
                 <div className='LPDates'>
                     <img src="../favicon-32x32.png" alt="beispiel auto" />
-                    <h2>Dein nächster Termin</h2>
+                    <h3>Dein nächster Termin:</h3>
                     {carWithNextAppointment ? (
-                        <div>
-                            <p>{carWithNextAppointment.marke} {carWithNextAppointment.modell}</p>
-                            <p>{carWithNextAppointment.kennzeichen}</p>
-                            <p>{new Date(carWithNextAppointment.nächsteTüvUntersuchung).toLocaleDateString()}</p>
+                        <div className='dateDiv'>
+                            <p className='dateInfo'>{carWithNextAppointment.marke} {carWithNextAppointment.modell}</p>
+                            <p className='dateInfo'>{carWithNextAppointment.kennzeichen}</p>
+                            <p className='dateInfo'>{new Date(carWithNextAppointment.nächsteTüvUntersuchung).toLocaleDateString()}</p>
                         </div>
                     ) : (
-                        <p>Kein Termin gefunden</p>
+                        <p className='dateDiv'>Kein Termin gefunden</p>
                     )}
                 </div>
             </section>
-            {/* <h2>Deine Fahrzeuge</h2> */}
             <div className='yourCarsLP'>
             <h2>Deine Fahrzeuge</h2>
                 <SlideShow />
