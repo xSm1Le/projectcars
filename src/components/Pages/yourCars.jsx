@@ -57,6 +57,13 @@ export const YourCars = () => {
                     <div key={car._id} className="carImg">
                        {/*  <img src="../public/pwa-192x192.png" alt="Beispielbild Auto" /> */}
                         <h4>{car.marke} {car.modell}</h4>
+                        <p>Kennzeichen: {car.kennzeichen}</p>
+                        <p>Kraftstoff: {car.kraftstoff}</p>
+                        <p>Leistung: {car.leistungKW} kW / {car.leistungPS} PS</p>
+                        <p>Kilometerstand: {car.kilometerstand} km</p>
+                        <p>Nächste TÜV-Untersuchung: {new Date(car.nächsteTüvUntersuchung).toLocaleDateString()}</p>
+                        <p>Nächster Ölwechsel: {new Date(car.nächsteoelwechsel).toLocaleDateString()}</p>
+                        <p>Nächster Ölwechsel bei: {car.nächsteoelwechselKm} km</p>
                     </div>
                 ))}
             </div>
