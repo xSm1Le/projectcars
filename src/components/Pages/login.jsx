@@ -50,7 +50,8 @@ export const Login = () => {
     };
 
     return (
-            <div className="Loginpage">
+        <section className="loginSection">
+            <div className="LoginPage">
                 <h1>Login</h1>
                 <form onSubmit={handleSubmit}>
                 {isLoading ? 
@@ -89,5 +90,6 @@ export const Login = () => {
                     </div>
                 </form>
             </div>
+        </section>
     )
 }

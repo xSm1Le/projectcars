@@ -5,8 +5,9 @@
     flex-direction: column;
     height: 70vh;
     width: 70vw;
+    margin-top: 2rem;
     background-color: #ecededb7;
-    border: 5px solid #00000021;
+    border: #00000021;
     border-radius: 4%;
 }
 
@@ -78,14 +79,14 @@ ul li {
 }
 
 .passwordInput input[type="password"] {
-    padding-right: 35px; /* Platz für den Button */
+    padding-right: 1px;
 }
 
 .passwordInput button {
     position: absolute;
-    top: 50%; /* Zentrieren vertikal */
-    right: 10px; /* Abstand vom rechten Rand */
-    transform: translateY(-50%); /* Zentrieren vertikal */
+    top: 41%;
+    right: 0;
+    transform: translateY(-50%);
     background: none;
     border: none;
     cursor: pointer;

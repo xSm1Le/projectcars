@@ -43,8 +43,10 @@ export const Navbar = () => {
 
                     </div>
                     <div>
-                        {!token && <button className="button-13" role="button" onClick={navigateToLogin}>Einloggen</button>}
-                        {!token && <button className="button-13" role="button" onClick={navigateToRegister}>Registrieren</button>}
+                        <div className='loginButtons'>
+                            {!token && <button className="button-13" role="button" onClick={navigateToLogin}>Einloggen</button>}
+                            {!token && <button className="button-13" role="button" onClick={navigateToRegister}>Registrieren</button>}
+                        </div>
                         {token && <nav role="navigation">
                             <div id="menuToggle">
                             <input type="checkbox" />
