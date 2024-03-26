@@ -1,4 +1,5 @@
 import { createContext, useState, useContext, useEffect } from 'react';
+import { jwtDecode } from 'jwt-decode';
 
 const AuthContext = createContext();
 
@@ -13,9 +14,11 @@ export const AuthProvider = ({ children }) => {
         // Wenn ein Token vorhanden ist, speichere es im localStorage
         if (token) {
             localStorage.setItem('token', token);
+            localStorage.setItem('userId', jwtDecode(token).userId);
         } else {
             // Entferne den Token aus dem localStorage, wenn `token` null ist
             localStorage.removeItem('token');
+            localStorage.removeItem('userId');
         }
     }, [token]);
 

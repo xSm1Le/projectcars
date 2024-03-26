@@ -58,7 +58,11 @@
 }
 
 #note {
-    border-radius: 1rem;
-    border-color: #161925;
-    margin: 1rem;
+
+    border-color: #161925
+}
+
+.terminTag {
+    background-color: red !important; /* Rot für die Hervorhebung */
+    color: white !important; /* Weiße Textfarbe für bessere Lesbarkeit *
 }
