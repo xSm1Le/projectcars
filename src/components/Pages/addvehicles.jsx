@@ -6,13 +6,14 @@ import { MyVehiclesButtons } from '../reusables/myvehicles'
 import { jwtDecode }  from 'jwt-decode'
 import './buttons.css'
 import './addvehicles.css'
+import  config  from '../global/configAPI'
 
 export const AddAllCars = () => {
   const navigate = useNavigate()
   const { token } = useAuth()
   const decodedToken = jwtDecode(token);// Entschlüsseln des Tokens
   const userId = decodedToken.userId; // Extrahieren der Benutzer-ID aus dem Token
-  const [fahrzeugart, setFahrzeugart] = useState(''); // Standardwert als PKW
+  const [fahrzeugart, setFahrzeugart] = useState('car'); // Standardwert als PKW
   const [kennzeichen, setKennzeichen] = useState('');
   const [marke, setMarke] = useState('');
   const [modell, setModell] = useState('');
@@ -48,7 +49,7 @@ export const AddAllCars = () => {
     };
  console.log(token)
     try {
-      const response = await fetch('https://carsdatabase.cyclic.app/api/cars/addCar', {
+      const response = await fetch(`${config.API_BASE_URL}/api/cars/addCar`, {
         method: 'POST',
         /* credentials: 'omit', */
         headers: {
