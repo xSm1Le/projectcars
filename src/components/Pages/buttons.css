@@ -7,12 +7,11 @@
   color: #0f1111;
   cursor: pointer;
   display: inline-block;
-  /* font wird bei mir nicht erkannt */
   font-family: "Amazon Ember",sans-serif;
   font-size: 13px;
   line-height: 29px;
   padding: 0 10px 0 11px;
-  /* ab hier wozu? */
+  width: 100px;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -20,7 +19,6 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: middle;
-  width: 100px;
 }
 
 .button-13:hover {

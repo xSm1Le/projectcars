@@ -9,39 +9,60 @@
 }
 
 .react-calendar__tile--now {
-    background: #cbf7ed;
+    background-color: #cbf7ed;
+    color: #22395b
 }
 
 .react-calendar__tile--active:enabled:hover, .react-calendar__tile--active:enabled:focus {
-    background: #23395b;
+    background-color: #23395b;
 }
 
 .datesh2 {
     margin: 1rem 0;
 }
 
+.termine {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #cbf7ed;
+    border-radius: 1rem;
+    width: 80%;
+    height: 2.5rem;
+    margin-top: 1rem;
+}
+
 .DButtons {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 2.5rem;
+    height: 5rem;
+    width: 100vw;
     background-color: #161925;
     border-radius: 5px;
+    position: fixed;
+    bottom: 0;
 }
 
 .DButton {
-    height: 2rem;
-    width: 4.5rem;
+    height: 2.5rem;
+    width: 6rem;
     background-color: #cbf7ed;
     border: 1px solid #cbf7ed;
     border-radius: 10px;
 }
 
+.text {
+    display: flex;
+    justify-content: center;
+}
+
 #note {
+
     border-color: #161925
 }
 
 .terminTag {
     background-color: red !important; /* Rot für die Hervorhebung */
-    color: white !important; /* Weiße Textfarbe für bessere Lesbarkeit */
+    color: white !important; /* Weiße Textfarbe für bessere Lesbarkeit *
 }

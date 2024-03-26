@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router';
 import { useState } from 'react';
 import { useAuth } from '../global/checkStatus';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import './buttons.css';
 import './login.css';
 import config from '../global/configAPI';
-
 
 export const Login = () => {
     const navigate = useNavigate();
@@ -12,9 +12,8 @@ export const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState(''); 
     const [message, setMessage] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [isLoading, setIsLoading] = useState(false); // Zustand für Ladeindikator hinzugefügt
-
-    
 
     const navigateToRegister = () => navigate('/register'); 
 
@@ -46,13 +45,20 @@ export const Login = () => {
         }
     };
 
-
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
 
     return (
         <section className="loginSection">
             <div className="LoginPage">
                 <h1>Login</h1>
                 <form onSubmit={handleSubmit}>
+                {isLoading ? 
+                    <div className='loading'>
+                        <img src={'./loading.gif'}className="loading-icon" alt="loading" />
+                    </div>  
+                    : 
                     <ul>
                         <li>
                             <input type="email" placeholder="e-Mail Adresse"
@@ -60,17 +66,21 @@ export const Login = () => {
                                 onChange={(e) => setEmail(e.target.value)}
                                 required />
                         </li>
-                        <li>
-                            <input type="password" minLength="8"
+                        <li className="passwordInput">
+                            <input type={showPassword ? 'text' : 'password'} name='pw' minLength="8"
                                 value={password} placeholder="Passwort"
                                 onChange={(e) => setPassword(e.target.value)}
                                 required />
+                            <button type="button" onClick={togglePasswordVisibility}>
+                                {showPassword ? <FaEyeSlash /> : <FaEye />}
+                            </button>
                         </li>
-                    </ul>
+                    </ul>}
                     <div className="buttonsLogin">
                         <button className="button-13" type="submit" disabled={isLoading}>
-                            {isLoading ? 'Einloggen...' : 'Einloggen'}
+                            {isLoading ? 'Einloggen ...' : 'Einloggen'}
                         </button>
+                        <button className="button-13" role="button" onClick={navigateToRegister}>Passwort Vergessen?</button>
                         <button className="button-13" type="button" onClick={navigateToRegister}>
                             Registrieren
                         </button>
@@ -78,7 +88,6 @@ export const Login = () => {
                     <div>
                         <p>{message}</p>
                     </div>
-                    
                 </form>
             </div>
         </section>

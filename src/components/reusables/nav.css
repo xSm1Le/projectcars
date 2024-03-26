@@ -30,6 +30,12 @@
   padding-right: 5%;
 }
 
+.loginButtons{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .benutzericonNav {
   border-radius: 50%;
   background-color: #cbf7ed;
