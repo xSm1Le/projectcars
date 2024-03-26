@@ -11,6 +11,7 @@ import { Termine } from "../Pages/termine.jsx";
 import { MyVehiclesButtons } from "../reusables/myvehicles.jsx";
 import { YourCars } from "../Pages/yourCars.jsx";
 import { Einstellungen } from "../Pages/einstellungen.jsx";
+import { MyCarInfo } from "../Pages/myCarInfo.jsx";
 
 
 
@@ -57,7 +58,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "carInformation",
-                element: <carForm />
+                element: <MyCarInfo />
             },
         ],
     },

@@ -64,6 +64,10 @@ export const YourCars = () => {
                         <p>Nächste TÜV-Untersuchung: {new Date(car.nächsteTüvUntersuchung).toLocaleDateString()}</p>
                         <p>Nächster Ölwechsel: {new Date(car.nächsteoelwechsel).toLocaleDateString()}</p>
                         <p>Nächster Ölwechsel bei: {car.nächsteoelwechselKm} km</p>
+                        <div className="buttonstyle">
+                        <button className="button-13">Bearbeiten</button>
+                        <button className="button-13">Löschen</button>
+                        </div>
                     </div>
                 ))}
             </div>
