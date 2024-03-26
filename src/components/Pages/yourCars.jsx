@@ -47,6 +47,36 @@ export const YourCars = () => {
         }
     }, [token, cartype, cars]);
 
+
+
+    // Löschen eines Autos
+
+    const handleDelete = async (carId) => {
+        const confirmDelete = window.confirm('Möchten Sie dieses Auto wirklich löschen?');
+        console.log('Token: ', token);
+        console.log('CarId: ', carId);
+        
+        if (confirmDelete) {
+        try {
+        const response = await fetch(`${config.API_BASE_URL}/api/cars/${carId}`, {
+            method: 'DELETE',
+            headers: { 'Authorization': `Bearer ${token}` }
+            
+        });
+
+        if (response.ok) {
+            setCars(cars.filter(car => car._id !== carId));
+        }
+        }
+        catch (error) {
+            console.error("Fehler: ", error);
+        }
+    }
+    }
+
+
+
+
     return (
         <section className="yourCars">
             <div>
@@ -66,7 +96,7 @@ export const YourCars = () => {
                         <p>Nächster Ölwechsel bei: {car.nächsteoelwechselKm} km</p>
                         <div className="buttonstyle">
                         <button className="button-13">Bearbeiten</button>
-                        <button className="button-13">Löschen</button>
+                        <button className="button-13" onClick={() => handleDelete(car._id)} >Löschen</button>
                         </div>
                     </div>
                 ))}
