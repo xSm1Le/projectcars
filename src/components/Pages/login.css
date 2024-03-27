@@ -65,7 +65,7 @@ ul li {
     width: 250px;
     position: absolute;
     top: 50%;
-    left: 15%;
+    left: 35%;
     transform: translate(-50%);
     animation: slideIn 0.5s forwards;
 }
