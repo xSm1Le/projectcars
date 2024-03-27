@@ -92,13 +92,14 @@ export const YourCars = () => {
                         {editingCarId === car._id ? (
                             <div className="editForm">
                             <form onSubmit={handleEditFormSubmit}>
-                                <label htmlFor="nächsteTüvUntersuchung">Nächste TÜV-Untersuchung</label>
+                               <p > <label htmlFor="nächsteTüvUntersuchung">Nächste TÜV-Untersuchung</label> </p>
                                 <input type="date" name="nächsteTüvUntersuchung" value={editFormData.nächsteTüvUntersuchung} onChange={handleEditFormChange} />
-                                <label htmlFor="nächsteoelwechsel">Nächster Ölwechsel</label>
+                               <p > <label htmlFor="nächsteoelwechsel">Nächster Ölwechsel</label> </p>
                                 <input type="date" name="nächsteoelwechsel" value={editFormData.nächsteoelwechsel} onChange={handleEditFormChange} />
-                                <label htmlFor="nächsteoelwechselKm">Nächster Ölwechsel bei</label>
+                                <p ><label htmlFor="nächsteoelwechselKm">Nächster Ölwechsel bei</label> </p>
                                 <input type="number" name="nächsteoelwechselKm" value={editFormData.nächsteoelwechselKm} onChange={handleEditFormChange} />
                                 <button type="submit">Speichern</button>
+                                <button onClick={() => setEditingCarId(null)}>Abbrechen</button>
                             </form>
                             </div>
                         ) : (
