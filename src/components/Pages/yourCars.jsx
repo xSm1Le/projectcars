@@ -90,12 +90,17 @@ export const YourCars = () => {
                 {cars.map(car => (
                     <div key={car._id} className="carImg">
                         {editingCarId === car._id ? (
+                            <div className="editForm">
                             <form onSubmit={handleEditFormSubmit}>
+                                <label htmlFor="nächsteTüvUntersuchung">Nächste TÜV-Untersuchung</label>
                                 <input type="date" name="nächsteTüvUntersuchung" value={editFormData.nächsteTüvUntersuchung} onChange={handleEditFormChange} />
+                                <label htmlFor="nächsteoelwechsel">Nächster Ölwechsel</label>
                                 <input type="date" name="nächsteoelwechsel" value={editFormData.nächsteoelwechsel} onChange={handleEditFormChange} />
+                                <label htmlFor="nächsteoelwechselKm">Nächster Ölwechsel bei</label>
                                 <input type="number" name="nächsteoelwechselKm" value={editFormData.nächsteoelwechselKm} onChange={handleEditFormChange} />
                                 <button type="submit">Speichern</button>
                             </form>
+                            </div>
                         ) : (
                             <>
                                 <h4>{car.marke} {car.modell}</h4>
